@@ -1,10 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Brand() {
   return (
     <Link href="/" className="group flex items-center gap-3">
-      <span className="grid size-11 place-items-center rounded-2xl border border-cyan-300/30 bg-cyan-300/10 shadow-[0_0_35px_rgba(34,211,238,0.25)]">
-        <span className="size-5 rounded-lg bg-gradient-to-br from-cyan-300 via-pink-300 to-orange-300" />
+      <span className="grid size-14 shrink-0 place-items-center rounded-2xl border border-fuchsia-300/30 bg-purple-950/70 p-1.5 shadow-[0_0_35px_rgba(168,85,247,0.32)]">
+        <Image
+          src="/cybhrsec-logo.png"
+          alt="CybHrSec logo"
+          width={56}
+          height={56}
+          className="size-full object-contain"
+          priority
+        />
       </span>
       <span>
         <span className="block text-lg font-semibold tracking-tight text-white">

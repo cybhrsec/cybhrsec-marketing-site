@@ -1,10 +1,8 @@
 export const navItems = [
   { label: "Home", href: "/" },
-  { label: "About CybHrSec", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "ISO 27001", href: "/iso-27001" },
-  { label: "SOC 1/2 Readiness", href: "/soc-readiness" },
-  { label: "GRC Tool", href: "/grc-tool" },
+  { label: "GRC Platform", href: "/grc-tool" },
+  { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];

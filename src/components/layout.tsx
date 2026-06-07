@@ -4,8 +4,8 @@ import { Brand } from "@/components/brand";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#08071a]/85 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+    <header className="nav-reveal sticky top-0 z-50 bg-[#050514]/80 px-4 py-4 backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/10 bg-black/35 px-4 py-3 shadow-[0_0_40px_rgba(126,34,206,0.18)] lg:px-5">
         <Brand />
         <div className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
@@ -18,12 +18,20 @@ export function Header() {
             </Link>
           ))}
         </div>
-        <Link
-          href="/contact"
-          className="hidden rounded-full bg-cyan-300 px-4 py-2 text-sm font-semibold text-[#08071a] shadow-[0_0_24px_rgba(34,211,238,0.35)] transition hover:bg-white md:inline-flex"
-        >
-          Book a Consultation
-        </Link>
+        <div className="hidden items-center gap-2 md:flex">
+          <Link
+            href="/client-portal"
+            className="rounded-full border border-white/15 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:border-fuchsia-200/50 hover:bg-white/15"
+          >
+            Client Portal
+          </Link>
+          <Link
+            href="/contact"
+            className="rounded-full bg-gradient-to-r from-fuchsia-400 to-violet-500 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(168,85,247,0.35)] transition hover:scale-[1.02] hover:from-fuchsia-300 hover:to-violet-400"
+          >
+            Book a Consultation
+          </Link>
+        </div>
         <details className="group relative lg:hidden">
           <summary className="flex size-11 cursor-pointer list-none items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-white transition hover:bg-white/15">
             <span className="sr-only">Open navigation</span>
@@ -43,6 +51,20 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <div className="mt-2 grid gap-2 border-t border-white/10 pt-3">
+              <Link
+                href="/client-portal"
+                className="block rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-cyan-100 transition hover:bg-white/10"
+              >
+                Client Portal
+              </Link>
+              <Link
+                href="/contact"
+                className="block rounded-2xl bg-gradient-to-r from-fuchsia-400 to-violet-500 px-4 py-3 text-sm font-bold text-white transition hover:from-fuchsia-300 hover:to-violet-400"
+              >
+                Book a Consultation
+              </Link>
+            </div>
           </div>
         </details>
       </nav>
@@ -67,8 +89,9 @@ export function Footer() {
             title="Company"
             links={[
               ["About", "/about"],
-              ["Services", "/services"],
               ["Blog", "/blog"],
+              ["Careers", "/careers"],
+              ["Services", "/services"],
             ]}
           />
           <FooterColumn
@@ -83,7 +106,7 @@ export function Footer() {
             title="Next step"
             links={[
               ["Contact", "/contact"],
-              ["Client Portal", "http://localhost:3000"],
+              ["Client Portal", "/client-portal"],
             ]}
           />
         </div>

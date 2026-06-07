@@ -7,7 +7,7 @@ export default function GrcToolPage() {
         eyebrow="CybHrSec GRC Tool"
         title="A modern client portal for cybersecurity and compliance work."
         description="The CybHrSec GRC Tool helps clients track risks, policies, remediation, evidence, vendor work, and executive reporting in one organized workspace."
-        primaryHref="http://localhost:3000"
+        primaryHref="/client-portal"
         primaryLabel="Access Client Portal"
         secondaryHref="/contact"
         secondaryLabel="Book a Consultation"

@@ -7,7 +7,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Let’s map your next cybersecurity and compliance step."
         description="Share your goals, current pressure points, and timeline. CybHrSec can help turn the work into a clear readiness and reporting plan."
-        primaryHref="http://localhost:3000"
+        primaryHref="/client-portal"
         primaryLabel="Access Client Portal"
       />
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
