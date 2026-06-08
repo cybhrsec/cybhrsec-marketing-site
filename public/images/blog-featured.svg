@@ -1,0 +1,30 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="720" rx="44" fill="#070612"/>
+  <circle cx="694" cy="216" r="224" fill="url(#pink)" opacity=".28"/>
+  <circle cx="304" cy="520" r="190" fill="url(#cyan)" opacity=".2"/>
+  <rect x="166" y="172" width="628" height="376" rx="34" fill="#0D0A1E" stroke="url(#border)" stroke-width="2"/>
+  <path d="M226 256h236M226 318h326M226 380h206" stroke="#F4ECFF" stroke-width="20" stroke-linecap="round"/>
+  <rect x="590" y="250" width="120" height="120" rx="28" fill="url(#tile)"/>
+  <path d="M628 310h44M650 288v44" stroke="#080714" stroke-width="10" stroke-linecap="round"/>
+  <rect x="226" y="452" width="112" height="18" rx="9" fill="#49F3FF"/>
+  <rect x="358" y="452" width="154" height="18" rx="9" fill="#B66DFF"/>
+  <defs>
+    <radialGradient id="pink" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(694 216) rotate(90) scale(224)">
+      <stop stop-color="#FF78CF"/>
+      <stop offset="1" stop-color="#FF78CF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cyan" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(304 520) rotate(90) scale(190)">
+      <stop stop-color="#49F3FF"/>
+      <stop offset="1" stop-color="#49F3FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="border" x1="166" y1="172" x2="794" y2="548" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B66DFF"/>
+      <stop offset="1" stop-color="#49F3FF"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="590" y1="250" x2="710" y2="370" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#49F3FF"/>
+      <stop offset=".55" stop-color="#B66DFF"/>
+      <stop offset="1" stop-color="#FF78CF"/>
+    </linearGradient>
+  </defs>
+</svg>

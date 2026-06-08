@@ -1,4 +1,4 @@
-import { ContactCta, PageHero } from "@/components/sections";
+import { PageHero } from "@/components/sections";
 
 export default function SocReadinessPage() {
   return (
@@ -40,7 +40,6 @@ export default function SocReadinessPage() {
           ))}
         </div>
       </section>
-      <ContactCta />
     </>
   );
 }

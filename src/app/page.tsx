@@ -14,7 +14,7 @@ const servicesOverview = [
       "Digital Safety Coaching",
     ],
     cta: "Explore Individual Services",
-    href: "/services",
+    href: "/services/individual",
   },
   {
     title: "Businesses",
@@ -29,7 +29,7 @@ const servicesOverview = [
       "Virtual GRC Support",
     ],
     cta: "Explore Business Services",
-    href: "/services",
+    href: "/services/business",
   },
   {
     title: "CybHrSec GRC Tool",
@@ -87,6 +87,11 @@ const speakingCards = [
     description:
       "Speaking engagements focused on cybersecurity governance, risk management, compliance readiness, third-party risk, and sustainable security programs.",
   },
+];
+
+const serviceMenuItems = [
+  ["Business", "/services/business"],
+  ["Individual", "/services/individual"],
 ];
 
 export default function Home() {
@@ -165,16 +170,21 @@ function HeroPanelHeader() {
       <Brand />
       <nav className="hidden items-center gap-1 rounded-full border border-white/10 bg-black/35 p-1 text-sm font-semibold text-slate-200/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl lg:flex">
         {links.map(([label, href]) => (
-          <Link
-            key={href}
-            href={href}
-            className="rounded-full px-4 py-2 transition hover:bg-white/10 hover:text-white"
-          >
-            {label}
-          </Link>
+          label === "Services" ? (
+            <HeroServicesDropdown key={href} />
+          ) : (
+            <Link
+              key={href}
+              href={href}
+              className="rounded-full px-4 py-2 transition hover:bg-white/10 hover:text-white"
+            >
+              {label}
+            </Link>
+          )
         ))}
       </nav>
       <div className="flex items-center gap-2">
+        <HeroMobileMenu links={links} />
         <Link
           href="/client-portal"
           className="hidden rounded-full border border-white/15 bg-black/30 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-xl transition hover:border-fuchsia-200/50 hover:bg-fuchsia-400/10 sm:inline-flex"
@@ -182,13 +192,102 @@ function HeroPanelHeader() {
           Client Portal
         </Link>
         <Link
-          href="/contact"
+          href="/services/business"
           className="rounded-full bg-gradient-to-r from-fuchsia-400 to-violet-500 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(168,85,247,0.35)] transition hover:from-fuchsia-300 hover:to-violet-400"
         >
           Book a Consultation
         </Link>
       </div>
     </div>
+  );
+}
+
+function HeroServicesDropdown() {
+  return (
+    <div className="group relative">
+      <Link
+        href="/services"
+        className="rounded-full px-4 py-2 transition hover:bg-white/10 hover:text-white group-hover:bg-white/10 group-hover:text-white"
+        aria-haspopup="true"
+      >
+        Services
+      </Link>
+      <div className="invisible absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+        <div className="rounded-3xl border border-white/12 bg-[#100d2b]/95 p-2 shadow-2xl shadow-black/35 backdrop-blur-xl">
+          {serviceMenuItems.map(([label, href]) => (
+            <Link
+              key={href}
+              href={href}
+              className="block rounded-2xl px-4 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white"
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function HeroMobileMenu({ links }: { links: string[][] }) {
+  return (
+    <details className="group relative lg:hidden">
+      <summary className="flex size-11 cursor-pointer list-none items-center justify-center rounded-2xl border border-white/15 bg-black/30 text-white transition hover:bg-white/10">
+        <span className="sr-only">Open navigation</span>
+        <span className="flex flex-col gap-1.5">
+          <span className="block h-0.5 w-5 rounded bg-white transition group-open:translate-y-2 group-open:rotate-45" />
+          <span className="block h-0.5 w-5 rounded bg-white transition group-open:opacity-0" />
+          <span className="block h-0.5 w-5 rounded bg-white transition group-open:-translate-y-2 group-open:-rotate-45" />
+        </span>
+      </summary>
+      <div className="absolute right-0 mt-3 w-72 overflow-hidden rounded-3xl border border-white/15 bg-[#100d2b] p-3 text-left shadow-2xl shadow-black/40">
+        {links.map(([label, href]) =>
+          label === "Services" ? (
+            <details key={href} className="group/services">
+              <summary className="flex cursor-pointer list-none items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium text-slate-100 transition hover:bg-white/10">
+                Services
+                <span className="text-xs text-fuchsia-100 transition group-open/services:rotate-180">
+                  v
+                </span>
+              </summary>
+              <div className="ml-3 grid gap-1 border-l border-white/10 pl-3">
+                {serviceMenuItems.map(([serviceLabel, serviceHref]) => (
+                  <Link
+                    key={serviceHref}
+                    href={serviceHref}
+                    className="block rounded-2xl px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"
+                  >
+                    {serviceLabel}
+                  </Link>
+                ))}
+              </div>
+            </details>
+          ) : (
+            <Link
+              key={href}
+              href={href}
+              className="block rounded-2xl px-4 py-3 text-sm font-medium text-slate-100 transition hover:bg-white/10"
+            >
+              {label}
+            </Link>
+          ),
+        )}
+        <div className="mt-2 grid gap-2 border-t border-white/10 pt-3">
+          <Link
+            href="/client-portal"
+            className="block rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-cyan-100 transition hover:bg-white/10"
+          >
+            Client Portal
+          </Link>
+          <Link
+            href="/services/business"
+            className="block rounded-2xl bg-gradient-to-r from-fuchsia-400 to-violet-500 px-4 py-3 text-sm font-bold text-white transition hover:from-fuchsia-300 hover:to-violet-400"
+          >
+            Book a Consultation
+          </Link>
+        </div>
+      </div>
+    </details>
   );
 }
 
@@ -630,78 +729,6 @@ function SpeakingVisual() {
   );
 }
 
-function CategorySection({
-  id,
-  eyebrow,
-  title,
-  description,
-  cards,
-  columns = "six",
-}: {
-  id: string;
-  eyebrow: string;
-  title: string;
-  description: string;
-  cards: { title: string; description: string }[];
-  columns?: "three" | "four" | "six";
-}) {
-  const gridClass =
-    columns === "four"
-      ? "md:grid-cols-2 xl:grid-cols-4"
-      : columns === "three"
-        ? "md:grid-cols-3"
-        : "md:grid-cols-2 xl:grid-cols-3";
-
-  return (
-    <section id={id} className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-      <div className="reveal">
-        <p className="text-sm font-bold uppercase tracking-[0.24em] text-fuchsia-200">
-          {eyebrow}
-        </p>
-        <div className="mt-4 grid gap-5 lg:grid-cols-[0.95fr_1fr] lg:items-end">
-          <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            {title}
-          </h2>
-          <p className="max-w-2xl text-base leading-8 text-slate-300 lg:justify-self-end">
-            {description}
-          </p>
-        </div>
-      </div>
-      <div className={`mt-12 grid gap-5 ${gridClass}`}>
-        {cards.map((card, index) => (
-          <ServiceCard
-            key={card.title}
-            index={index}
-            title={card.title}
-            description={card.description}
-          />
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function ServiceCard({
-  title,
-  description,
-  index,
-}: {
-  title: string;
-  description: string;
-  index: number;
-}) {
-  return (
-    <article
-      className="reveal scale-in group rounded-[1.75rem] border border-white/10 bg-[#090911] p-6 shadow-2xl shadow-black/10 transition hover:-translate-y-1 hover:border-fuchsia-200/35 hover:bg-white/[0.06]"
-      style={{ animationDelay: `${index * 90}ms` }}
-    >
-      <AbstractIcon index={index} />
-      <h3 className="mt-7 text-lg font-semibold text-white">{title}</h3>
-      <p className="mt-3 text-sm leading-6 text-slate-400">{description}</p>
-    </article>
-  );
-}
-
 function AbstractIcon({ index }: { index: number }) {
   const shapes = [
     "rounded-[45%_55%_52%_48%]",
@@ -717,52 +744,6 @@ function AbstractIcon({ index }: { index: number }) {
       />
       <div className="absolute left-1/2 top-1/2 size-7 -translate-x-1/2 -translate-y-1/2 rounded-xl border border-white/30 bg-black/30 backdrop-blur" />
     </div>
-  );
-}
-
-function WhyCybHrSecSection() {
-  return (
-    <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-      <div className="reveal mx-auto max-w-3xl text-center">
-        <p className="text-sm font-bold uppercase tracking-[0.24em] text-cyan-200">
-          Why CybHrSec
-        </p>
-        <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          Security guidance for people, businesses, and GRC platform users.
-        </h2>
-        <p className="mt-5 text-base leading-8 text-slate-300 sm:text-lg">
-          The work stays practical: clear priorities, understandable risk
-          decisions, useful training, and reporting that leaders can use.
-        </p>
-      </div>
-      <div className="mt-12 grid gap-5 md:grid-cols-3">
-        {[
-          [
-            "Human-centred",
-            "Cybersecurity advice built around people, workflows, and decisions.",
-          ],
-          [
-            "Compliance-ready",
-            "Framework work translated into actions, ownership, and evidence.",
-          ],
-          [
-            "Platform-enabled",
-            "A modern client portal keeps risks, policies, and reporting organized.",
-          ],
-        ].map(([cardTitle, cardDescription], index) => (
-          <article
-            key={cardTitle}
-            className="reveal scale-in rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.09] to-white/[0.035] p-7"
-            style={{ animationDelay: `${index * 110}ms` }}
-          >
-            <h3 className="text-xl font-semibold text-white">{cardTitle}</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-300">
-              {cardDescription}
-            </p>
-          </article>
-        ))}
-      </div>
-    </section>
   );
 }
 

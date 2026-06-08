@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { blogPosts, readinessSteps, services } from "@/lib/content";
 
+export { ContactForm } from "@/components/contact-form";
+
 export function GlowBackground() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -71,8 +73,8 @@ export function PageHero({
   eyebrow,
   title,
   description,
-  primaryHref = "/contact",
-  primaryLabel = "Book a Consultation",
+  primaryHref,
+  primaryLabel,
   secondaryHref,
   secondaryLabel,
 }: {
@@ -87,7 +89,7 @@ export function PageHero({
   return (
     <section className="relative overflow-hidden">
       <GlowBackground />
-      <div className="relative mx-auto max-w-5xl px-5 py-20 text-center lg:px-8 lg:py-24">
+      <div className="relative mx-auto max-w-5xl px-5 py-12 text-center lg:px-8 lg:py-16">
         <Badge>{eyebrow}</Badge>
         <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-6xl">
           {title}
@@ -95,14 +97,18 @@ export function PageHero({
         <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
           {description}
         </p>
-        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <ButtonLink href={primaryHref}>{primaryLabel}</ButtonLink>
-          {secondaryHref && secondaryLabel ? (
-            <ButtonLink href={secondaryHref} variant="secondary">
-              {secondaryLabel}
-            </ButtonLink>
-          ) : null}
-        </div>
+        {primaryHref || secondaryHref ? (
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            {primaryHref && primaryLabel ? (
+              <ButtonLink href={primaryHref}>{primaryLabel}</ButtonLink>
+            ) : null}
+            {secondaryHref && secondaryLabel ? (
+              <ButtonLink href={secondaryHref} variant="secondary">
+                {secondaryLabel}
+              </ButtonLink>
+            ) : null}
+          </div>
+        ) : null}
       </div>
     </section>
   );
@@ -278,7 +284,7 @@ export function ContactCta() {
             fastest practical path toward better governance.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <ButtonLink href="/contact">Book a Consultation</ButtonLink>
+            <ButtonLink href="/services/business">Book a Consultation</ButtonLink>
             <ButtonLink href="/services" variant="secondary">
               View Services
             </ButtonLink>
@@ -286,60 +292,5 @@ export function ContactCta() {
         </div>
       </div>
     </section>
-  );
-}
-
-export function ContactForm() {
-  return (
-    <form className="grid gap-4 rounded-[2rem] border border-white/10 bg-white/[0.06] p-6 md:p-8">
-      <div className="grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-medium text-slate-200">
-          Name
-          <input
-            className="rounded-2xl border border-white/10 bg-[#070719] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-200"
-            placeholder="Your name"
-          />
-        </label>
-        <label className="grid gap-2 text-sm font-medium text-slate-200">
-          Email
-          <input
-            type="email"
-            className="rounded-2xl border border-white/10 bg-[#070719] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-200"
-            placeholder="you@company.com"
-          />
-        </label>
-      </div>
-      <label className="grid gap-2 text-sm font-medium text-slate-200">
-        Company
-        <input
-          className="rounded-2xl border border-white/10 bg-[#070719] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-200"
-          placeholder="Company name"
-        />
-      </label>
-      <label className="grid gap-2 text-sm font-medium text-slate-200">
-        What do you need help with?
-        <select className="rounded-2xl border border-white/10 bg-[#070719] px-4 py-3 text-white outline-none transition focus:border-cyan-200">
-          <option>Cyber risk assessment</option>
-          <option>ISO 27001 readiness</option>
-          <option>SOC 1 or SOC 2 readiness</option>
-          <option>GRC program support</option>
-          <option>CybHrSec GRC Tool</option>
-        </select>
-      </label>
-      <label className="grid gap-2 text-sm font-medium text-slate-200">
-        Message
-        <textarea
-          rows={5}
-          className="resize-none rounded-2xl border border-white/10 bg-[#070719] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-200"
-          placeholder="Tell us about your business, timeline, and compliance goals."
-        />
-      </label>
-      <button
-        type="button"
-        className="mt-2 min-h-12 rounded-full bg-cyan-300 px-6 text-sm font-bold text-[#08071a] transition hover:bg-white"
-      >
-        Send Inquiry
-      </button>
-    </form>
   );
 }

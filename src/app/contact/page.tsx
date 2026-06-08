@@ -5,29 +5,58 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Let’s map your next cybersecurity and compliance step."
-        description="Share your goals, current pressure points, and timeline. CybHrSec can help turn the work into a clear readiness and reporting plan."
-        primaryHref="/client-portal"
-        primaryLabel="Access Client Portal"
+        title="Tell CybHrSec what you need help with."
+        description="Use the form for general enquiries, speaking requests, service questions, GRC platform questions, or next-step support."
+        primaryHref="/services/business"
+        primaryLabel="Business Services"
+        secondaryHref="/services/individual"
+        secondaryLabel="Individual Services"
       />
-      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-        <div>
-          <h2 className="text-3xl font-semibold tracking-tight text-white">
-            Book a consultation
-          </h2>
-          <p className="mt-5 text-base leading-8 text-slate-300">
-            Use the form to start a conversation about cyber risk assessments,
-            ISO 27001, SOC 1 or SOC 2 readiness, policy implementation, vendor
-            risk, GRC support, or the CybHrSec client portal.
-          </p>
-          <div className="mt-8 rounded-3xl border border-white/10 bg-white/[0.06] p-6">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-200">
-              Response focus
+      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+        <div className="space-y-5">
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-6">
+            <h2 className="text-2xl font-semibold tracking-tight text-white">
+              When to use this form
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-300">
+              Use it when you are not sure which service fits, want to ask about
+              a workshop or keynote, need help with the GRC platform, or want to
+              describe a cybersecurity concern before booking.
             </p>
-            <p className="mt-3 text-sm leading-7 text-slate-300">
-              You will get a practical next-step conversation, not a generic
-              sales pitch.
+          </div>
+          <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#170b2d] to-[#080719] p-6">
+            <h2 className="text-2xl font-semibold tracking-tight text-white">
+              Contact details
+            </h2>
+            <dl className="mt-5 space-y-4 text-sm leading-7 text-slate-300">
+              <div>
+                <dt className="font-semibold text-cyan-200">Email</dt>
+                <dd>info@cybhrsec.com</dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-cyan-200">Expected response time</dt>
+                <dd>Most enquiries receive a response within 1 to 2 business days.</dd>
+              </div>
+            </dl>
+          </div>
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.045] p-6">
+            <h2 className="text-2xl font-semibold tracking-tight text-white">
+              Prefer to book directly?
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-300">
+              Business discovery calls are best for company-level consulting,
+              compliance readiness, GRC, and platform support. Individual
+              consultations are best for personal digital safety, privacy, and
+              creator security questions.
             </p>
+            <a
+              href="https://calendly.com/cybhrsec-info/30min"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-cyan-300 px-6 text-sm font-bold text-[#08071a] shadow-[0_0_30px_rgba(34,211,238,0.35)] transition hover:bg-white"
+            >
+              Discovery Call
+            </a>
           </div>
         </div>
         <ContactForm />

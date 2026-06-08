@@ -1,4 +1,4 @@
-import { ContactCta, PageHero, ReadinessPanel } from "@/components/sections";
+import { PageHero, ReadinessPanel } from "@/components/sections";
 
 export default function IsoPage() {
   return (
@@ -24,7 +24,6 @@ export default function IsoPage() {
         ))}
       </section>
       <ReadinessPanel />
-      <ContactCta />
     </>
   );
 }

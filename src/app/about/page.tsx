@@ -1,40 +1,109 @@
-import { ContactCta, PageHero } from "@/components/sections";
+import Image from "next/image";
+import { PageHero } from "@/components/sections";
+
+const framework = [
+  ["01", "Understand", "Clarify the people, systems, risks, goals, and pressures shaping the work."],
+  ["02", "Assess", "Review controls, policies, accounts, suppliers, evidence, and reporting gaps."],
+  ["03", "Simplify", "Turn findings into practical priorities, plain-English decisions, and clear ownership."],
+  ["04", "Embed", "Help teams build routines that keep security and compliance moving after the first project."],
+  ["05", "Improve", "Use reporting, lessons learned, and changing risk to keep the program relevant."],
+];
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
         eyebrow="About CybHrSec"
-        title="Cybersecurity and compliance support for teams that need clarity."
-        description="CybHrSec is built for small and growing businesses that need practical security leadership, compliance readiness, and reporting without turning daily operations into an audit project."
+        title="Cybersecurity that starts with people and supports real business decisions."
+        description="CybHrSec exists to make cybersecurity, digital safety, privacy, governance, risk, and compliance easier to understand and easier to act on."
       />
-      <section className="mx-auto grid max-w-7xl gap-8 px-5 py-16 lg:grid-cols-3 lg:px-8">
-        {[
-          [
-            "Business-first security",
-            "We connect controls, policies, vendors, and remediation to the way your company actually works.",
-          ],
-          [
-            "Compliance readiness",
-            "We help teams prepare for ISO 27001, SOC 1, SOC 2, and customer security reviews with organized evidence and realistic plans.",
-          ],
-          [
-            "Clear executive reporting",
-            "We translate technical findings into ownership, timelines, risk decisions, and leadership-ready updates.",
-          ],
-        ].map(([title, description]) => (
-          <article
-            key={title}
-            className="rounded-3xl border border-white/10 bg-white/[0.06] p-7"
-          >
-            <h2 className="text-xl font-semibold text-white">{title}</h2>
-            <p className="mt-4 text-sm leading-7 text-slate-300">
-              {description}
+      <section className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
+        <div className="grid gap-8 overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#160b2c] via-[#0b0718] to-[#1a0713] p-6 md:p-9 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#080719] shadow-2xl shadow-black/30">
+            <Image
+              src="/images/valerie-founder.png"
+              alt="Valerie Arko-Adjei, founder of CybHrSec"
+              width={1200}
+              height={1400}
+              className="aspect-[4/5] h-full w-full object-cover object-center"
+              priority
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#080719]/35 via-transparent to-transparent" />
+          </div>
+          <div className="flex flex-col justify-center">
+            <p className="text-sm font-bold uppercase tracking-[0.24em] text-cyan-200">
+              Founder perspective
             </p>
-          </article>
-        ))}
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              Founded by Valerie Adjei to make cybersecurity practical, human, and sustainable.
+            </h2>
+            <div className="mt-5 space-y-4 text-base leading-8 text-slate-300">
+              <p>
+                CybHrSec was founded by Valerie Adjei, a governance, risk,
+                compliance, privacy, and cybersecurity professional with more
+                than 10 years of experience spanning behavioural science, human
+                resources, governance, risk management, compliance, privacy, and
+                cybersecurity.
+              </p>
+              <p>
+                Working across industries including financial services,
+                healthcare, nonprofit, and professional services, Valerie
+                observed that many security and compliance challenges are not
+                caused by a lack of technology, but by a disconnect between
+                people, processes, and expectations. Effective cybersecurity is
+                not only about controls and frameworks; it is also about
+                communication, behaviour, accountability, and helping people make
+                safer decisions.
+              </p>
+              <p>
+                This belief led to the development of the Human-Centered
+                Cybersecurity and Compliance (HCC-GRC) approach, which focuses on
+                making cybersecurity and compliance practical, understandable,
+                and sustainable.
+              </p>
+              <p>
+                While organizations face increasingly complex security and
+                regulatory challenges, individuals also encounter cyber risks in
+                their everyday lives, from online scams and identity theft to
+                privacy concerns and account compromise. Cybersecurity governance
+                is not just a business issue; it is a personal one too.
+              </p>
+              <p>
+                That is why CybHrSec supports both businesses and individuals,
+                helping people protect what matters most, whether that is an
+                organization, a brand, a career, or their personal digital life.
+              </p>
+              <p className="border-t border-white/10 pt-4 text-sm font-semibold leading-7 text-cyan-100">
+                Credentials: MSIT Cybersecurity, MS Human Resource Development
+                &amp; Consultancy, ISO 27001:2022 Lead Implementer, Chartered
+                Institute of Personnel Development.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
-      <ContactCta />
+      <section className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
+        <div className="mb-8 max-w-3xl">
+          <p className="text-sm font-bold uppercase tracking-[0.24em] text-fuchsia-200">
+            Human-centred framework
+          </p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            A practical method for making security stick.
+          </h2>
+        </div>
+        <div className="grid gap-4 md:grid-cols-5">
+          {framework.map(([number, title, copy]) => (
+            <article
+              key={title}
+              className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.08] to-white/[0.03] p-5 transition hover:-translate-y-1 hover:border-fuchsia-200/40"
+            >
+              <span className="text-sm font-bold text-cyan-200">{number}</span>
+              <h3 className="mt-4 text-xl font-semibold text-white">{title}</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-300">{copy}</p>
+            </article>
+          ))}
+        </div>
+      </section>
     </>
   );
 }

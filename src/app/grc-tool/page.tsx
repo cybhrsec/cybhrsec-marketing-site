@@ -1,4 +1,4 @@
-import { ContactCta, GrcToolPreview, PageHero } from "@/components/sections";
+import { GrcToolPreview, PageHero } from "@/components/sections";
 
 export default function GrcToolPage() {
   return (
@@ -9,7 +9,7 @@ export default function GrcToolPage() {
         description="The CybHrSec GRC Tool helps clients track risks, policies, remediation, evidence, vendor work, and executive reporting in one organized workspace."
         primaryHref="/client-portal"
         primaryLabel="Access Client Portal"
-        secondaryHref="/contact"
+        secondaryHref="/services/business"
         secondaryLabel="Book a Consultation"
       />
       <GrcToolPreview />
@@ -25,7 +25,6 @@ export default function GrcToolPage() {
           ),
         )}
       </section>
-      <ContactCta />
     </>
   );
 }
