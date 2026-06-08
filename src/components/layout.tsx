@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { navItems } from "@/lib/content";
 import { Brand } from "@/components/brand";
 
@@ -6,6 +10,8 @@ const serviceMenuItems = [
   ["Business", "/services/business"],
   ["Individual", "/services/individual"],
 ];
+
+const discoveryCallUrl = "https://calendly.com/cybhrsec-info/30min";
 
 const socialLinks = [
   {
@@ -21,6 +27,31 @@ const socialLinks = [
 ];
 
 export function Header() {
+  const pathname = usePathname();
+  const mobileMenuRef = useRef<HTMLDetailsElement>(null);
+
+  useEffect(() => {
+    mobileMenuRef.current?.removeAttribute("open");
+  }, [pathname]);
+
+  useEffect(() => {
+    function handlePointerDown(event: PointerEvent) {
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target as Node)
+      ) {
+        mobileMenuRef.current.removeAttribute("open");
+      }
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, []);
+
+  function closeMobileMenu() {
+    mobileMenuRef.current?.removeAttribute("open");
+  }
+
   return (
     <header className="nav-reveal sticky top-0 z-50 bg-[#050514]/80 px-4 py-4 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/10 bg-black/35 px-4 py-3 shadow-[0_0_40px_rgba(126,34,206,0.18)] lg:px-5">
@@ -47,14 +78,17 @@ export function Header() {
           >
             Client Portal
           </Link>
-          <Link
-            href="/services/business"
+          <a
+            href={discoveryCallUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Book a Discovery Call"
             className="rounded-full bg-gradient-to-r from-fuchsia-400 to-violet-500 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(168,85,247,0.35)] transition hover:scale-[1.02] hover:from-fuchsia-300 hover:to-violet-400"
           >
-            Book a Consultation
-          </Link>
+            Book Discovery Call
+          </a>
         </div>
-        <details className="group relative lg:hidden">
+        <details ref={mobileMenuRef} className="group relative lg:hidden">
           <summary className="flex size-11 cursor-pointer list-none items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-white transition hover:bg-white/15">
             <span className="sr-only">Open navigation</span>
             <span className="flex flex-col gap-1.5">
@@ -78,6 +112,7 @@ export function Header() {
                       <Link
                         key={href}
                         href={href}
+                        onClick={closeMobileMenu}
                         className="block rounded-2xl px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"
                       >
                         {label}
@@ -89,6 +124,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={closeMobileMenu}
                   className="block rounded-2xl px-4 py-3 text-sm font-medium text-slate-100 transition hover:bg-white/10"
                 >
                   {item.label}
@@ -98,16 +134,21 @@ export function Header() {
             <div className="mt-2 grid gap-2 border-t border-white/10 pt-3">
               <Link
                 href="/client-portal"
+                onClick={closeMobileMenu}
                 className="block rounded-2xl border border-white/10 px-4 py-3 text-sm font-semibold text-cyan-100 transition hover:bg-white/10"
               >
                 Client Portal
               </Link>
-              <Link
-                href="/services/business"
+              <a
+                href={discoveryCallUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Book a Discovery Call"
+                onClick={closeMobileMenu}
                 className="block rounded-2xl bg-gradient-to-r from-fuchsia-400 to-violet-500 px-4 py-3 text-sm font-bold text-white transition hover:from-fuchsia-300 hover:to-violet-400"
               >
-                Book a Consultation
-              </Link>
+                Book Discovery Call
+              </a>
             </div>
           </div>
         </details>
@@ -117,21 +158,58 @@ export function Header() {
 }
 
 function ServicesDropdown() {
+  const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    function handlePointerDown(event: PointerEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, []);
+
   return (
-    <div className="group relative">
+    <div
+      ref={dropdownRef}
+      className="relative"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+      onFocus={() => setIsOpen(true)}
+    >
       <Link
         href="/services"
-        className="rounded-full px-3.5 py-2 text-sm font-medium text-slate-200/80 transition hover:bg-white/10 hover:text-white group-hover:bg-white/10 group-hover:text-white"
+        onClick={() => setIsOpen(false)}
+        className={`rounded-full px-3.5 py-2 text-sm font-medium text-slate-200/80 transition hover:bg-white/10 hover:text-white ${
+          isOpen ? "bg-white/10 text-white" : ""
+        }`}
         aria-haspopup="true"
+        aria-expanded={isOpen}
       >
         Services
       </Link>
-      <div className="invisible absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+      <div
+        className={`absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-3 transition duration-200 ${
+          isOpen ? "visible opacity-100" : "invisible opacity-0"
+        }`}
+      >
         <div className="rounded-3xl border border-white/12 bg-[#100d2b]/95 p-2 shadow-2xl shadow-black/35 backdrop-blur-xl">
           {serviceMenuItems.map(([label, href]) => (
             <Link
               key={href}
               href={href}
+              onClick={() => setIsOpen(false)}
               className="block rounded-2xl px-4 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white"
             >
               {label}

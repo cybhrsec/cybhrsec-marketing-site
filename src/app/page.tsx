@@ -94,6 +94,8 @@ const serviceMenuItems = [
   ["Individual", "/services/individual"],
 ];
 
+const discoveryCallUrl = "https://calendly.com/cybhrsec-info/30min";
+
 export default function Home() {
   return (
     <>
@@ -191,12 +193,15 @@ function HeroPanelHeader() {
         >
           Client Portal
         </Link>
-        <Link
-          href="/services/business"
+        <a
+          href={discoveryCallUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Book a Discovery Call"
           className="rounded-full bg-gradient-to-r from-fuchsia-400 to-violet-500 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_28px_rgba(168,85,247,0.35)] transition hover:from-fuchsia-300 hover:to-violet-400"
         >
-          Book a Consultation
-        </Link>
+          Book Discovery Call
+        </a>
       </div>
     </div>
   );
@@ -212,7 +217,7 @@ function HeroServicesDropdown() {
       >
         Services
       </Link>
-      <div className="invisible absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+      <div className="invisible absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:opacity-100">
         <div className="rounded-3xl border border-white/12 bg-[#100d2b]/95 p-2 shadow-2xl shadow-black/35 backdrop-blur-xl">
           {serviceMenuItems.map(([label, href]) => (
             <Link
@@ -279,12 +284,15 @@ function HeroMobileMenu({ links }: { links: string[][] }) {
           >
             Client Portal
           </Link>
-          <Link
-            href="/services/business"
+          <a
+            href={discoveryCallUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Book a Discovery Call"
             className="block rounded-2xl bg-gradient-to-r from-fuchsia-400 to-violet-500 px-4 py-3 text-sm font-bold text-white transition hover:from-fuchsia-300 hover:to-violet-400"
           >
-            Book a Consultation
-          </Link>
+            Book Discovery Call
+          </a>
         </div>
       </div>
     </details>
