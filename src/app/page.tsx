@@ -161,7 +161,7 @@ function HeroPanelHeader() {
     ["Services", "/services"],
     ["GRC Platform", "/grc-tool"],
     ["About", "/about"],
-    ["Blog", "/blog"],
+    ["Insights", "/insights"],
     ["Contact", "/contact"],
   ];
 

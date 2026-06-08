@@ -40,43 +40,31 @@ export default function AboutPage() {
             <div className="mt-5 space-y-4 text-base leading-8 text-slate-300">
               <p>
                 CybHrSec was founded by Valerie Adjei, a governance, risk,
-                compliance, privacy, and cybersecurity professional with more
-                than 10 years of experience spanning behavioural science, human
-                resources, governance, risk management, compliance, privacy, and
-                cybersecurity.
+                compliance, and cybersecurity professional with over 10 years
+                of experience spanning behavioral science, human resources,
+                governance, risk management, compliance, and cybersecurity.
               </p>
               <p>
-                Working across industries including financial services,
-                healthcare, nonprofit, and professional services, Valerie
-                observed that many security and compliance challenges are not
-                caused by a lack of technology, but by a disconnect between
-                people, processes, and expectations. Effective cybersecurity is
-                not only about controls and frameworks; it is also about
-                communication, behaviour, accountability, and helping people make
-                safer decisions.
+                Working across financial services, healthcare, nonprofit, and
+                professional services, Valerie observed that many security and
+                compliance challenges are not caused by a lack of technology,
+                but by gaps between people, processes, and expectations.
+                Effective cybersecurity depends not only on controls and
+                frameworks but also on communication, behavior, accountability,
+                and support for people in making informed decisions.
               </p>
               <p>
-                This belief led to the development of the Human-Centered
+                This insight led to the development of the Human-Centered
                 Cybersecurity and Compliance (HCC-GRC) approach, which focuses on
                 making cybersecurity and compliance practical, understandable,
-                and sustainable.
+                and sustainable for all.
               </p>
               <p>
-                While organizations face increasingly complex security and
-                regulatory challenges, individuals also encounter cyber risks in
-                their everyday lives, from online scams and identity theft to
-                privacy concerns and account compromise. Cybersecurity governance
-                is not just a business issue; it is a personal one too.
-              </p>
-              <p>
-                That is why CybHrSec supports both businesses and individuals,
-                helping people protect what matters most, whether that is an
-                organization, a brand, a career, or their personal digital life.
-              </p>
-              <p className="border-t border-white/10 pt-4 text-sm font-semibold leading-7 text-cyan-100">
-                Credentials: MSIT Cybersecurity, MS Human Resource Development
-                &amp; Consultancy, ISO 27001:2022 Lead Implementer, Chartered
-                Institute of Personnel Development.
+                Today, CybHrSec supports both businesses and individuals, helping
+                them navigate cybersecurity, compliance, privacy, and digital
+                safety challenges. Whether you&apos;re protecting an organization, a
+                brand, a career, or your personal digital life, CybHrSec helps
+                you build resilience in an increasingly connected world.
               </p>
             </div>
           </div>

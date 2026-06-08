@@ -3,7 +3,7 @@ export const navItems = [
   { label: "Services", href: "/services" },
   { label: "GRC Platform", href: "/grc-tool" },
   { label: "About", href: "/about" },
-  { label: "Blog", href: "/blog" },
+  { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ];
 

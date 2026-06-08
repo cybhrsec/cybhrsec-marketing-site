@@ -245,9 +245,9 @@ export function BlogPreview() {
   return (
     <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
       <SectionHeader
-        eyebrow="Resources"
-        title="Compliance guidance written for operators."
-        description="Short, useful articles for founders, operations leaders, and security owners who need to make better decisions quickly."
+        eyebrow="Insights"
+        title="Cybersecurity guidance written for real decisions."
+        description="Useful thinking for founders, operations leaders, creators, and security owners who need practical next steps."
       />
       <div className="mt-12 grid gap-5 md:grid-cols-3">
         {blogPosts.map((post) => (

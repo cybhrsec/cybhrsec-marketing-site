@@ -174,7 +174,7 @@ export function Footer() {
             title="Company"
             links={[
               ["About", "/about"],
-              ["Blog", "/blog"],
+              ["Insights", "/insights"],
               ["Careers", "/careers"],
               ["Services", "/services"],
             ]}
