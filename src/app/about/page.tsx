@@ -66,6 +66,12 @@ export default function AboutPage() {
                 brand, a career, or your personal digital life, CybHrSec helps
                 you build resilience in an increasingly connected world.
               </p>
+              <p className="border-t border-white/10 pt-4 text-sm font-medium leading-7 text-cyan-100/85">
+                Credentials: MSIT Cybersecurity, MS Human Resource Development
+                &amp; Consultancy, CompTIA Security+, ISO 27001:2022 Lead
+                Implementer, Chartered Institute of Personnel Development (CIPD
+                L7)
+              </p>
             </div>
           </div>
         </div>
