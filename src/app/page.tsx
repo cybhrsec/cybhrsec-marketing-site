@@ -5,46 +5,42 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 
 const servicesOverview = [
   {
-    title: "Individuals",
+    title: "Business Services",
     description:
-      "Digital protection for creators, professionals, and individuals who want to reduce personal cyber and online risk.",
+      "Manage cybersecurity risk, compliance, and governance with practical support tailored to small and growing businesses.",
     offerings: [
-      "Creator Security Assessment",
-      "Personal Digital Risk Assessment",
-      "Digital Safety Coaching",
-    ],
-    cta: "Explore Individual Services",
-    href: "/services/individual",
-  },
-  {
-    title: "Businesses",
-    description:
-      "Practical cybersecurity, governance, risk, and compliance support for small and growing organizations.",
-    offerings: [
-      "ISO 27001 Implementation",
-      "GRC Program Implementation",
-      "Risk Assessments",
-      "Security Awareness & Training",
-      "Third-Party Risk Management",
       "Virtual GRC Support",
+      "Compliance Readiness",
+      "Risk Assessments",
+      "HCC-GRC Platform",
     ],
-    cta: "Explore Business Services",
+    cta: "Learn More",
     href: "/services/business",
   },
   {
-    title: "CybHrSec GRC Tool",
+    title: "Executive & Creator Services",
     description:
-      "A practical GRC workspace for risks, policies, remediation, and reporting.",
+      "Protect your personal and professional digital presence with assessments designed for founders, executives, creators, and public-facing professionals.",
     offerings: [
-      "Risk workspace",
-      "Policy tracking",
-      "Remediation management",
-      "Executive reporting",
-      "Self-service subscription",
-      "Tool + Virtual GRC Consultant option",
+      "Executive Digital Safety Assessments",
+      "Creator Security Assessments",
+      "Personal + Business Digital Risk Reviews",
     ],
-    cta: "Explore GRC Tool",
-    href: "/grc-tool",
+    cta: "Learn More",
+    href: "/services/individual",
+  },
+  {
+    title: "Training & Workshops",
+    description:
+      "Build digital confidence through cybersecurity awareness training, digital safety education, one-to-one guidance, and practical workshops.",
+    offerings: [
+      "Cybersecurity Awareness Training",
+      "Digital Safety Education",
+      "Individual Digital Safety Guidance",
+      "Team Workshops",
+    ],
+    cta: "Learn More",
+    href: "/services/training",
   },
 ];
 
@@ -69,29 +65,54 @@ const approachSteps = [
     description:
       "Help businesses and individuals adopt secure practices that can be sustained.",
   },
+  {
+    title: "Improve",
+    description:
+      "Use reporting and lessons learned to keep the program relevant as risks change.",
+  },
 ];
 
 const speakingCards = [
   {
-    title: "Cybersecurity Awareness",
+    title: "Keynote Speaking",
     description:
-      "Practical cybersecurity education that helps employees and leaders understand common cyber risks and how to respond effectively.",
+      "Clear, engaging sessions on human-centered cybersecurity, digital safety, and practical risk decisions.",
   },
   {
-    title: "Digital Safety",
+    title: "Workshops & Panels",
     description:
-      "Sessions for creators, professionals, students, and families covering online safety, scams, privacy, social engineering, and personal cyber resilience.",
+      "Interactive sessions for teams, communities, schools, nonprofits, and professional audiences.",
   },
   {
-    title: "Governance, Risk & Compliance",
+    title: "GRC & Awareness Education",
     description:
-      "Speaking engagements focused on cybersecurity governance, risk management, compliance readiness, third-party risk, and sustainable security programs.",
+      "Practical education on governance, risk, compliance, cybersecurity awareness, and digital safety.",
   },
+];
+
+const complexityCards = [
+  [
+    "People are targeted first",
+    "Phishing, scams, social engineering, and impersonation exploit pressure, distraction, and trust.",
+  ],
+  [
+    "Digital exposure is expanding",
+    "Account compromise, privacy risks, public profiles, and shared access can affect individuals and organizations.",
+  ],
+  [
+    "Compliance can feel disconnected",
+    "Policies and frameworks often fail when they are not translated into everyday action and ownership.",
+  ],
+  [
+    "Security fatigue slows progress",
+    "Too much complexity makes it harder for people to adopt secure habits and sustain them over time.",
+  ],
 ];
 
 const serviceMenuItems = [
   ["Business", "/services/business"],
-  ["Individual", "/services/individual"],
+  ["Executive & Creator", "/services/individual"],
+  ["Training & Workshops", "/services/training"],
 ];
 
 const discoveryCallUrl = "https://calendly.com/cybhrsec-info/30min";
@@ -102,8 +123,8 @@ export default function Home() {
       <HeroSection />
       <main className="home-scroll relative -mt-28 overflow-hidden">
         <ScrollReveal />
+        <ComplexitySection />
         <ServicesOverviewSection />
-        <ClientPortalSection />
         <ApproachSection />
         <SpeakingSection />
         <FinalCtaSection />
@@ -161,7 +182,6 @@ function HeroPanelHeader() {
   const links = [
     ["Home", "/"],
     ["Services", "/services"],
-    ["GRC Platform", "/grc-tool"],
     ["About", "/about"],
     ["Insights", "/insights"],
     ["Contact", "/contact"],
@@ -299,6 +319,62 @@ function HeroMobileMenu({ links }: { links: string[][] }) {
   );
 }
 
+function ComplexitySection() {
+  return (
+    <section className="relative overflow-hidden px-5 py-14 lg:px-8">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(168,85,247,0.14),transparent_24rem),radial-gradient(circle_at_84%_75%,rgba(127,29,29,0.16),transparent_24rem)]" />
+      <div className="relative mx-auto max-w-7xl">
+        <div className="max-w-4xl">
+          <p
+            className="scroll-heading text-sm font-bold uppercase tracking-[0.24em] text-cyan-200"
+            data-scroll-reveal
+          >
+            Human-centered cybersecurity
+          </p>
+          <h2
+            className="scroll-heading mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl"
+            data-scroll-reveal
+          >
+            Human-Centered Cybersecurity That Turns Complexity Into Action
+          </h2>
+          <p
+            className="scroll-copy mt-5 text-base leading-8 text-slate-300 sm:text-lg"
+            data-scroll-reveal
+            style={{ transitionDelay: "120ms" }}
+          >
+            Cybersecurity and compliance challenges affect everyone, from small
+            teams and leaders to creators, professionals, and individuals. The
+            harder part is often translating risk into clear behavior, practical
+            decisions, and routines people can sustain.
+          </p>
+        </div>
+        <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          {complexityCards.map(([title, copy], index) => (
+            <article
+              key={title}
+              className="scroll-card rounded-[1.75rem] border border-white/10 bg-white/[0.055] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-200/35 hover:bg-white/[0.075]"
+              data-scroll-reveal
+              style={{ transitionDelay: `${index * 120}ms` }}
+            >
+              <div className="mb-5 h-1.5 w-14 rounded-full bg-gradient-to-r from-fuchsia-300 to-cyan-300" />
+              <h3 className="text-lg font-semibold text-white">{title}</h3>
+              <p className="mt-4 text-sm leading-7 text-slate-300">{copy}</p>
+            </article>
+          ))}
+        </div>
+        <p
+          className="scroll-copy mt-8 max-w-3xl rounded-[1.5rem] border border-white/10 bg-[#080611]/80 p-5 text-base leading-8 text-slate-200"
+          data-scroll-reveal
+          style={{ transitionDelay: "260ms" }}
+        >
+          CybHrSec helps turn cybersecurity and compliance complexity into
+          practical actions people can understand, adopt, and sustain.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function ServicesOverviewSection() {
   return (
     <section id="services" className="relative overflow-hidden px-5 py-14 lg:px-8">
@@ -315,14 +391,15 @@ function ServicesOverviewSection() {
             className="scroll-heading mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl"
             data-scroll-reveal
           >
-            Practical cyber support for people, businesses, and GRC teams.
+            Three practical ways to work with CybHrSec.
           </h2>
           <p
             className="scroll-copy mt-5 text-base leading-8 text-slate-300 sm:text-lg"
             data-scroll-reveal
             style={{ transitionDelay: "120ms" }}
           >
-            Choose the right starting point without needing to decode security jargon first.
+            Choose the right support for your organization, your public-facing
+            role, or the people who need practical cybersecurity education.
           </p>
         </div>
         <div className="mt-9 grid gap-5 lg:grid-cols-3">
@@ -527,7 +604,7 @@ function ApproachSection() {
           not fear or unnecessary technical noise.
         </p>
       </div>
-      <div className="relative mt-10 grid gap-5 lg:grid-cols-4">
+      <div className="relative mt-10 grid gap-5 lg:grid-cols-5">
         <div className="pointer-events-none absolute left-10 right-10 top-9 hidden h-px bg-gradient-to-r from-transparent via-fuchsia-200/45 to-transparent lg:block" />
         {approachSteps.map((step, index) => (
           <article
@@ -563,21 +640,22 @@ function SpeakingSection() {
             className="scroll-heading text-sm font-bold uppercase tracking-[0.24em] text-cyan-200"
             data-scroll-reveal
           >
-            Speaking & Training
+            Speaking & Thought Leadership
           </p>
           <h2
             className="scroll-heading mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl"
             data-scroll-reveal
           >
-            Keynotes, Workshops & Cybersecurity Awareness
+            Cybersecurity education for real audiences.
           </h2>
           <p
             className="scroll-copy mt-5 text-base leading-8 text-slate-300 sm:text-lg"
             data-scroll-reveal
             style={{ transitionDelay: "120ms" }}
           >
-            Helping organizations, communities, and professionals understand
-            cybersecurity, digital safety, and risk in practical, human-centred ways.
+            CybHrSec supports keynote speaking, workshops, panels,
+            cybersecurity awareness sessions, human-centered cybersecurity
+            education, GRC education, and digital safety education.
           </p>
           <div
             className="scroll-copy mt-8 flex flex-col gap-3 sm:flex-row"
@@ -585,7 +663,7 @@ function SpeakingSection() {
             style={{ transitionDelay: "220ms" }}
           >
             <ButtonLink href="/contact">Request a Speaking Engagement</ButtonLink>
-            <ButtonLink href="/services" variant="secondary">
+            <ButtonLink href="/services/training" variant="secondary">
               View Speaking Topics
             </ButtonLink>
           </div>
@@ -614,11 +692,11 @@ function SpeakingSection() {
 }
 
 function ServiceIcon({ title, index }: { title: string; index: number }) {
-  if (title === "Individuals") {
+  if (title === "Executive & Creator Services") {
     return <PersonIcon />;
   }
 
-  if (title === "Businesses") {
+  if (title === "Business Services") {
     return <GroupIcon />;
   }
 
@@ -767,8 +845,8 @@ function FinalCtaSection() {
             Ready to make cybersecurity practical?
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-300">
-            Explore practical support for individuals, businesses, and teams
-            using the CybHrSec GRC Tool.
+            Explore practical support for small businesses, executives,
+            creators, teams, and people who need cybersecurity to make sense.
           </p>
           <div className="mt-8 flex justify-center">
             <ButtonLink href="/services">Explore Services</ButtonLink>

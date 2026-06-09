@@ -8,7 +8,8 @@ import { Brand } from "@/components/brand";
 
 const serviceMenuItems = [
   ["Business", "/services/business"],
-  ["Individual", "/services/individual"],
+  ["Executive & Creator", "/services/individual"],
+  ["Training & Workshops", "/services/training"],
 ];
 
 const discoveryCallUrl = "https://calendly.com/cybhrsec-info/30min";
@@ -29,10 +30,19 @@ const socialLinks = [
 export function Header() {
   const pathname = usePathname();
   const mobileMenuRef = useRef<HTMLDetailsElement>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     mobileMenuRef.current?.removeAttribute("open");
+    setIsMobileMenuOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     function handlePointerDown(event: PointerEvent) {
@@ -41,6 +51,7 @@ export function Header() {
         !mobileMenuRef.current.contains(event.target as Node)
       ) {
         mobileMenuRef.current.removeAttribute("open");
+        setIsMobileMenuOpen(false);
       }
     }
 
@@ -50,6 +61,7 @@ export function Header() {
 
   function closeMobileMenu() {
     mobileMenuRef.current?.removeAttribute("open");
+    setIsMobileMenuOpen(false);
   }
 
   return (
@@ -88,7 +100,19 @@ export function Header() {
             Book Discovery Call
           </a>
         </div>
-        <details ref={mobileMenuRef} className="group relative lg:hidden">
+        {isMobileMenuOpen ? (
+          <button
+            aria-label="Close navigation"
+            className="fixed inset-0 z-[-1] bg-[#050514]/75 backdrop-blur-md lg:hidden"
+            onClick={closeMobileMenu}
+            type="button"
+          />
+        ) : null}
+        <details
+          ref={mobileMenuRef}
+          className="group relative lg:hidden"
+          onToggle={(event) => setIsMobileMenuOpen(event.currentTarget.open)}
+        >
           <summary className="flex size-11 cursor-pointer list-none items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-white transition hover:bg-white/15">
             <span className="sr-only">Open navigation</span>
             <span className="flex flex-col gap-1.5">
@@ -97,13 +121,13 @@ export function Header() {
               <span className="block h-0.5 w-5 rounded bg-white transition group-open:-translate-y-2 group-open:-rotate-45" />
             </span>
           </summary>
-          <div className="absolute right-0 mt-3 w-72 overflow-hidden rounded-3xl border border-white/15 bg-[#100d2b] p-3 shadow-2xl shadow-black/40">
+          <div className="absolute right-0 mt-3 max-h-[calc(100svh-7rem)] w-[min(20rem,calc(100vw-2rem))] overflow-y-auto rounded-3xl border border-white/15 bg-[#100d2b]/95 p-4 shadow-2xl shadow-black/50 backdrop-blur-2xl">
             {navItems.map((item) => (
               item.label === "Services" ? (
                 <details key={item.href} className="group/services">
                   <summary className="flex cursor-pointer list-none items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium text-slate-100 transition hover:bg-white/10">
                     Services
-                    <span className="text-xs text-fuchsia-100 transition group-open/services:rotate-180">
+                    <span className="text-base text-fuchsia-100 transition group-open/services:rotate-180">
                       v
                     </span>
                   </summary>
@@ -228,9 +252,10 @@ export function Footer() {
         <div>
           <Brand />
           <p className="mt-5 max-w-md text-sm leading-6 text-slate-300">
-            CybHrSec helps small and growing businesses manage cybersecurity
-            risk, compliance readiness, policies, remediation, and executive
-            reporting through practical consulting and a modern client portal.
+            CybHrSec helps individuals, small and growing businesses manage
+            cybersecurity risk, compliance readiness, policies, remediation, and
+            executive reporting through practical consulting and a modern client
+            portal.
           </p>
           <div className="mt-6 flex items-center gap-3">
             {socialLinks.map(({ label, href, icon: Icon }) => (

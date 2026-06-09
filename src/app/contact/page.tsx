@@ -6,24 +6,10 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Tell CybHrSec what you need help with."
-        description="Use the form for general enquiries, speaking requests, service questions, GRC platform questions, or next-step support."
-        primaryHref="/services/business"
-        primaryLabel="Business Services"
-        secondaryHref="/services/individual"
-        secondaryLabel="Individual Services"
+        description="Use the form for business services, executive and creator support, partnerships, speaking, training, or general enquiries."
       />
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div className="space-y-5">
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-6">
-            <h2 className="text-2xl font-semibold tracking-tight text-white">
-              When to use this form
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-slate-300">
-              Use it when you are not sure which service fits, want to ask about
-              a workshop or keynote, need help with the GRC platform, or want to
-              describe a cybersecurity concern before booking.
-            </p>
-          </div>
           <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#170b2d] to-[#080719] p-6">
             <h2 className="text-2xl font-semibold tracking-tight text-white">
               Contact details
@@ -44,10 +30,8 @@ export default function ContactPage() {
               Prefer to book directly?
             </h2>
             <p className="mt-4 text-sm leading-7 text-slate-300">
-              Business discovery calls are best for company-level consulting,
-              compliance readiness, GRC, and platform support. Individual
-              consultations are best for personal digital safety, privacy, and
-              creator security questions.
+              Discovery calls are best for business services, GRC support,
+              platform questions, training, workshops, and next-step planning.
             </p>
             <a
               href="https://calendly.com/cybhrsec-info/30min"

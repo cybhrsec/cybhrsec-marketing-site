@@ -8,16 +8,24 @@ const servicePaths = [
     href: "/services/business",
     image: "/images/advisory-visual.svg",
     description:
-      "Cybersecurity consulting, GRC advisory, ISO 27001 and SOC 2 readiness, risk assessments, policy support, and GRC dashboard guidance.",
-    items: ["GRC advisory", "Compliance readiness", "Risk assessments", "Security awareness"],
+      "Cybersecurity consulting, GRC advisory, compliance readiness, risk assessments, and HCC-GRC Platform support.",
+    items: ["Virtual GRC", "Compliance readiness", "Risk assessments", "HCC-GRC Platform"],
   },
   {
-    title: "Individual Services",
+    title: "Executive & Creator Services",
     href: "/services/individual",
     image: "/images/digital-safety-visual.svg",
     description:
-      "Digital safety audits, personal cyber consultations, account reviews, privacy support, and creator security guidance.",
-    items: ["Digital safety", "Account security", "Privacy", "Creator risk"],
+      "Personal and professional digital safety support for founders, executives, creators, and public-facing professionals.",
+    items: ["Executive safety", "Creator security", "Account protection", "Digital footprint"],
+  },
+  {
+    title: "Training & Workshops",
+    href: "/services/training",
+    image: "/images/resources-visual.svg",
+    description:
+      "Practical cybersecurity awareness, digital safety education, one-to-one guidance, and team workshops.",
+    items: ["Awareness training", "Digital safety", "Team workshops", "Speaking"],
   },
 ];
 
@@ -27,14 +35,14 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Choose the support that fits your situation."
-        description="CybHrSec supports organizations, creators, professionals, and individuals with practical cybersecurity and digital safety services."
+        description="CybHrSec supports organizations, public-facing professionals, creators, teams, and individuals with practical cybersecurity, compliance, and digital safety services."
         primaryHref="/services/business"
         primaryLabel="Business Services"
         secondaryHref="/services/individual"
-        secondaryLabel="Individual Services"
+        secondaryLabel="Executive & Creator Services"
       />
       <section className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-6 lg:grid-cols-3">
           {servicePaths.map((path) => (
             <article
               key={path.href}

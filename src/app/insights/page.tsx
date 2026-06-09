@@ -1,5 +1,5 @@
 import type { InsightPost } from "@/lib/insights";
-import { getLatestInsights, SUBSTACK_FEED_URL } from "@/lib/insights";
+import { getLatestInsights } from "@/lib/insights";
 import { PageHero } from "@/components/sections";
 
 export const dynamic = "force-dynamic";
@@ -53,18 +53,27 @@ export default async function InsightsPage() {
           </div>
         ) : (
           <>
-            <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div className="mb-8 flex flex-col justify-between gap-5 rounded-[2rem] border border-white/10 bg-white/[0.055] p-6 md:flex-row md:items-end">
               <div>
                 <p className="text-sm font-bold uppercase tracking-[0.24em] text-fuchsia-200">
-                  Latest from Substack
+                  Subscribe to CybHrSec Insights
                 </p>
                 <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                  Fresh thinking for safer decisions.
+                  Practical guidance delivered directly to your inbox.
                 </h2>
+                <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300">
+                  Practical cybersecurity, compliance, governance, and digital
+                  safety guidance delivered directly to your inbox.
+                </p>
               </div>
-              <p className="max-w-md text-sm leading-7 text-slate-400">
-                Feed source: <span className="text-slate-200">{SUBSTACK_FEED_URL}</span>
-              </p>
+              <a
+                href="https://cybhrsec.substack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-full bg-cyan-300 px-6 text-sm font-bold text-[#08071a] transition hover:bg-white"
+              >
+                Subscribe to Insights
+              </a>
             </div>
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {posts.map((post) => (

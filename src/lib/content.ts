@@ -1,7 +1,6 @@
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "GRC Platform", href: "/grc-tool" },
   { label: "About", href: "/about" },
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },

@@ -4,12 +4,12 @@ import type { FormEvent } from "react";
 import { useState } from "react";
 
 const enquiryTypes = [
-  "Cyber risk assessment",
-  "ISO 27001 readiness",
-  "SOC 1 or SOC 2 readiness",
-  "GRC program support",
-  "CybHrSec GRC Tool",
-  "Keynote speaker",
+  "Business Services",
+  "Executive & Creator Services",
+  "General Inquiry",
+  "Partnerships",
+  "Speaking Engagement",
+  "Training & Workshops",
 ];
 
 export function ContactForm() {
