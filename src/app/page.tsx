@@ -170,9 +170,6 @@ function HeroSection() {
             <p className="mx-auto mt-6 max-w-none whitespace-nowrap text-[clamp(0.72rem,1.55vw,1.125rem)] leading-7 text-slate-300">
               Protecting people. Strengthening businesses. Making cybersecurity practical.
             </p>
-            <p className="mx-auto mt-5 max-w-3xl text-sm font-semibold uppercase tracking-[0.2em] text-cyan-100/90">
-              Cybersecurity GRC consultancy + GRC platform addressing the human risk layer
-            </p>
           </div>
         </div>
       </div>
@@ -338,7 +335,7 @@ function ComplexitySection() {
             className="scroll-heading mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl"
             data-scroll-reveal
           >
-            Human-Centered Cybersecurity That Turns Complexity Into Action
+            Addressing the Human Risk Layer Behind Security and Compliance Failures
           </h2>
           <p
             className="scroll-copy mt-5 text-base leading-8 text-slate-300 sm:text-lg"
