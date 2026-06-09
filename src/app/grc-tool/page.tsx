@@ -4,13 +4,13 @@ export default function GrcToolPage() {
   return (
     <>
       <PageHero
-        eyebrow="CybHrSec GRC Tool"
-        title="A modern client portal for cybersecurity and compliance work."
-        description="The CybHrSec GRC Tool helps clients track risks, policies, remediation, evidence, vendor work, and executive reporting in one organized workspace."
+        eyebrow="CybHrSec Pro GRC Tool"
+        title="CybHrSec Pro helps organize cybersecurity and compliance work."
+        description="CybHrSec Pro is a GRC tool designed to help organizations manage cybersecurity risk, compliance readiness, policies, remediation, evidence, vendor work, and executive reporting."
         primaryHref="/client-portal"
         primaryLabel="Access Client Portal"
         secondaryHref="/services/business"
-        secondaryLabel="Book a Consultation"
+        secondaryLabel="Business Services"
       />
       <GrcToolPreview />
       <section className="mx-auto grid max-w-7xl gap-5 px-5 py-16 md:grid-cols-4 lg:px-8">

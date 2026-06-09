@@ -180,15 +180,15 @@ export function GrcToolPreview() {
           Client portal
         </p>
         <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          A GRC workspace for risks, policies, remediation, and reporting.
+          CybHrSec Pro is a GRC workspace for risks, policies, remediation, and reporting.
         </h2>
         <p className="mt-5 text-base leading-8 text-slate-300">
-          The CybHrSec GRC Tool gives clients one place to see assessment
+          CybHrSec Pro, our GRC tool, gives clients one place to see assessment
           findings, track remediation, manage policies, organize evidence, and
           prepare clear updates for executives or auditors.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <ButtonLink href="/grc-tool">Explore the GRC Tool</ButtonLink>
+          <ButtonLink href="/grc-tool">Explore CybHrSec Pro</ButtonLink>
           <ButtonLink href="/client-portal" variant="secondary">
             Access Client Portal
           </ButtonLink>

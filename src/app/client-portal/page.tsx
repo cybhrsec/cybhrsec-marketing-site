@@ -9,7 +9,7 @@ export default function ClientPortalPage() {
       primaryHref="/contact"
       primaryLabel="Request Demo"
       secondaryHref="/grc-tool"
-      secondaryLabel="Explore GRC Tool"
+      secondaryLabel="Explore CybHrSec Pro"
     />
   );
 }

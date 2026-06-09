@@ -38,7 +38,7 @@ const supportOptions = [
     recommended: false,
   },
   {
-    title: "Virtual GRC Consultant + Platform",
+    title: "Virtual GRC Consultant + CybHrSec Pro",
     description: "Recommended for teams that want advisory support alongside the platform.",
     items: [
       "Dedicated Virtual GRC Consultant",
@@ -60,7 +60,7 @@ export default function BusinessServicesPage() {
       <PageHero
         eyebrow="Business Services"
         title="Human-Centered Cybersecurity & Compliance for Small and Growing Businesses"
-        description="CybHrSec helps organizations manage cybersecurity risk, compliance readiness, policies, remediation, and executive reporting through practical consulting and the HCC-GRC Platform."
+        description="CybHrSec helps organizations manage cybersecurity risk, compliance readiness, policies, remediation, and executive reporting through practical consulting and CybHrSec Pro, our GRC tool."
       />
       <section className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
         <div className="grid gap-5 lg:grid-cols-3">
@@ -85,12 +85,12 @@ export default function BusinessServicesPage() {
             Business platform
           </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            The HCC-GRC Platform
+            CybHrSec Pro GRC Tool
           </h2>
           <p className="mt-5 text-base leading-8 text-slate-300">
-            A centralized platform designed to help organizations manage
-            cybersecurity risk, compliance readiness, remediation efforts, and
-            executive reporting.
+            CybHrSec Pro is our GRC tool designed to help small and growing
+            businesses manage cybersecurity risk, compliance readiness, policies,
+            remediation, and executive reporting in one place.
           </p>
           <div className="mt-7 grid gap-4 sm:grid-cols-2">
             {platformFeatures.map(([title, copy]) => (
@@ -166,7 +166,7 @@ function PlatformMockup() {
         <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-fuchsia-200">
-              HCC-GRC Platform
+              CybHrSec Pro
             </p>
             <h3 className="mt-2 text-xl font-semibold text-white">
               Executive dashboard

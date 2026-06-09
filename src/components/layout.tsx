@@ -272,22 +272,14 @@ export function Footer() {
             ))}
           </div>
         </div>
-        <div className="grid gap-8 sm:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2">
           <FooterColumn
             title="Company"
             links={[
               ["About", "/about"],
-              ["Insights", "/insights"],
               ["Careers", "/careers"],
+              ["Insights", "/insights"],
               ["Services", "/services"],
-            ]}
-          />
-          <FooterColumn
-            title="Readiness"
-            links={[
-              ["ISO 27001", "/iso-27001"],
-              ["SOC 1/2", "/soc-readiness"],
-              ["GRC Tool", "/grc-tool"],
             ]}
           />
           <FooterColumn

@@ -8,8 +8,8 @@ const servicePaths = [
     href: "/services/business",
     image: "/images/advisory-visual.svg",
     description:
-      "Cybersecurity consulting, GRC advisory, compliance readiness, risk assessments, and HCC-GRC Platform support.",
-    items: ["Virtual GRC", "Compliance readiness", "Risk assessments", "HCC-GRC Platform"],
+      "Cybersecurity consulting, GRC advisory, compliance readiness, risk assessments, and CybHrSec Pro GRC Tool support.",
+    items: ["Virtual GRC", "Compliance readiness", "Risk assessments", "CybHrSec Pro"],
   },
   {
     title: "Executive & Creator Services",
@@ -36,10 +36,6 @@ export default function ServicesPage() {
         eyebrow="Services"
         title="Choose the support that fits your situation."
         description="CybHrSec supports organizations, public-facing professionals, creators, teams, and individuals with practical cybersecurity, compliance, and digital safety services."
-        primaryHref="/services/business"
-        primaryLabel="Business Services"
-        secondaryHref="/services/individual"
-        secondaryLabel="Executive & Creator Services"
       />
       <section className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-3">

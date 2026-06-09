@@ -8,8 +8,6 @@ export default function CareersPage() {
       description="CybHrSec is not hiring publicly just yet. Future opportunities will focus on practical cybersecurity, GRC support, digital safety, and human-centred advisory work."
       primaryHref="/contact"
       primaryLabel="Contact CybHrSec"
-      secondaryHref="/about"
-      secondaryLabel="About CybHrSec"
     />
   );
 }

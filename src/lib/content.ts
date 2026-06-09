@@ -50,9 +50,9 @@ export const services = [
     accent: "from-cyan-300 to-blue-300",
   },
   {
-    title: "CybHrSec GRC Tool",
+    title: "CybHrSec Pro GRC Tool",
     description:
-      "Use a modern client portal for risk tracking, policies, remediation, and reporting.",
+      "Use CybHrSec Pro, our GRC tool, for risk tracking, policies, remediation, and reporting.",
     accent: "from-fuchsia-300 to-orange-300",
   },
 ];

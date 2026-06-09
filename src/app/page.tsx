@@ -12,7 +12,7 @@ const servicesOverview = [
       "Virtual GRC Support",
       "Compliance Readiness",
       "Risk Assessments",
-      "HCC-GRC Platform",
+      "CybHrSec Pro GRC Tool",
     ],
     cta: "Learn More",
     href: "/services/business",
@@ -456,24 +456,24 @@ function ClientPortalSection() {
             className="scroll-heading mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl"
             data-scroll-reveal
           >
-            Access the CybHrSec Client Portal
+            Access CybHrSec Pro through the Client Portal
           </h2>
           <p
             className="scroll-copy mt-5 text-lg leading-8 text-slate-300"
             data-scroll-reveal
             style={{ transitionDelay: "120ms" }}
           >
-            A GRC workspace for risks, policies, remediation, and reporting.
+            CybHrSec Pro is a GRC tool for risks, policies, remediation, and reporting.
           </p>
           <p
             className="scroll-copy mt-5 text-base leading-8 text-slate-400"
             data-scroll-reveal
             style={{ transitionDelay: "190ms" }}
           >
-            Clients can use the CybHrSec GRC Tool to manage risk registers,
-            policies, remediation actions, compliance readiness, and executive
-            reporting. The platform can be used as a self-service subscription
-            or paired with a Virtual GRC Consultant for guided support.
+            Clients can use CybHrSec Pro to manage risk registers, policies,
+            remediation actions, compliance readiness, and executive reporting.
+            The tool can be used as a self-service subscription or paired with a
+            Virtual GRC Consultant for guided support.
           </p>
           <div
             className="scroll-copy mt-8 flex flex-col gap-3 sm:flex-row"
@@ -663,9 +663,6 @@ function SpeakingSection() {
             style={{ transitionDelay: "220ms" }}
           >
             <ButtonLink href="/contact">Request a Speaking Engagement</ButtonLink>
-            <ButtonLink href="/services/training" variant="secondary">
-              View Speaking Topics
-            </ButtonLink>
           </div>
         </div>
         <div className="grid gap-4">
