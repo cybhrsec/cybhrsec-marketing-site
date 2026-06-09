@@ -3,20 +3,14 @@
 import type { FormEvent } from "react";
 import { useState } from "react";
 
-const interestAreas = [
-  "Governance, Risk & Compliance (GRC)",
-  "ISO 27001",
-  "SOC 2",
-  "Third-Party Risk Management",
-  "Privacy & Data Protection",
-  "AI Governance",
-  "Cybersecurity Awareness & Training",
-  "Risk Assessments",
-  "Policy Development",
-  "Digital Safety Education",
-];
-
 const acceptedFileTypes = ".pdf,.doc,.docx";
+const educationOptions = [
+  "High School",
+  "Associate Degree",
+  "Bachelor's Degree",
+  "Master's Degree",
+  "Doctorate Degree",
+];
 
 export function CareersApplicationForm({
   positionAppliedFor,
@@ -36,34 +30,15 @@ export function CareersApplicationForm({
     const email = String(formData.get("email") ?? "").trim();
     const linkedIn = String(formData.get("linkedInProfile") ?? "").trim();
 
-    formData.append("_subject", "Application Received - CybHrSec");
-    formData.append("_captcha", "false");
-    formData.append("_template", "table");
-    formData.append("Applicant Name", `${firstName} ${lastName}`.trim());
-    formData.append("Position Applied For", positionAppliedFor);
-    formData.append("Email Address", email);
-    formData.append("LinkedIn URL", linkedIn);
-    formData.append("Submission Timestamp", new Date().toISOString());
-    formData.append(
-      "_autoresponse",
-      [
-        "Thank you for your interest in CybHrSec.",
-        "",
-        `We have successfully received your application for the ${positionAppliedFor} role and appreciate your interest in joining our team.`,
-        "",
-        "Our team will review your information and contact you if your background aligns with current or future opportunities.",
-        "",
-        "Thank you for supporting our mission of making cybersecurity, governance, risk management, and compliance more accessible and human-centered.",
-      ].join("\n"),
-    );
+    formData.set("firstName", firstName);
+    formData.set("lastName", lastName);
+    formData.set("email", email);
+    formData.set("linkedInProfile", linkedIn);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/5f55b1508224f0f615acc7e50f41d2a7", {
+      const response = await fetch("/api/careers/apply", {
         method: "POST",
         body: formData,
-        headers: {
-          Accept: "application/json",
-        },
       });
 
       if (!response.ok) {
@@ -108,27 +83,19 @@ export function CareersApplicationForm({
         <div className="grid gap-4 sm:grid-cols-2">
           <TextInput label="Current Job Title" name="currentJobTitle" />
           <TextInput label="Years of Experience" name="yearsOfExperience" />
-          <TextInput label="Highest Level of Education" name="education" />
-          <TextInput label="Relevant Certifications" name="certifications" />
-        </div>
-      </FormSection>
-
-      <FormSection title="Areas of Interest">
-        <div className="grid gap-3 sm:grid-cols-2">
-          {interestAreas.map((area) => (
-            <label
-              key={area}
-              className="flex gap-3 rounded-2xl border border-white/10 bg-[#070719]/80 p-4 text-sm font-medium text-slate-200"
+          <label className="grid gap-2 text-sm font-medium text-slate-200">
+            Highest Level of Education
+            <select
+              className="rounded-2xl border border-white/10 bg-[#070719] px-4 py-3 text-white outline-none transition focus:border-cyan-200"
+              name="education"
             >
-              <input
-                className="mt-1 size-4 accent-cyan-300"
-                name="areasOfInterest"
-                type="checkbox"
-                value={area}
-              />
-              <span>{area}</span>
-            </label>
-          ))}
+              <option value="">Select education level</option>
+              {educationOptions.map((option) => (
+                <option key={option}>{option}</option>
+              ))}
+            </select>
+          </label>
+          <TextInput label="Relevant Certifications" name="certifications" />
         </div>
       </FormSection>
 
@@ -180,14 +147,16 @@ export function CareersApplicationForm({
 
       {status === "sent" ? (
         <p className="rounded-2xl border border-emerald-300/20 bg-emerald-300/10 px-4 py-3 text-sm font-medium text-emerald-100">
-          Your application has been submitted. CybHrSec will review your
-          information and contact you if your background aligns with this role.
+          Thank you. Your application has been submitted successfully.
+          <br />
+          Please check your email for confirmation.
         </p>
       ) : null}
       {status === "error" ? (
         <p className="rounded-2xl border border-rose-300/20 bg-rose-300/10 px-4 py-3 text-sm font-medium text-rose-100">
-          Something went wrong. Please email info@cybhrsec.com directly with
-          your application materials.
+          There was an issue submitting your application.
+          <br />
+          Please review your information and try again.
         </p>
       ) : null}
     </form>

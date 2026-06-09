@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { CareersApplicationForm } from "@/components/careers-application-form";
 import { PageHero } from "@/components/sections";
 import type { CareerRole } from "@/lib/careers";
@@ -17,7 +16,9 @@ export default function CybersecurityGrcInternPage() {
         description={role.overview}
       />
       <JobDetail role={role} />
-      <ApplicationSection positionAppliedFor={role.title} />
+      <section className="mx-auto max-w-4xl px-5 pb-16 pt-6 lg:px-8">
+        <CareersApplicationForm positionAppliedFor={role.title} />
+      </section>
     </>
   );
 }
@@ -40,12 +41,6 @@ function JobDetail({ role }: { role: CareerRole }) {
               <dd className="mt-1">{role.location}</dd>
             </div>
           </dl>
-          <Link
-            href="#application-form"
-            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-cyan-300 px-6 text-sm font-bold text-[#08071a] shadow-[0_0_30px_rgba(34,211,238,0.35)] transition hover:bg-white"
-          >
-            Apply
-          </Link>
         </aside>
         <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.08] via-fuchsia-300/[0.04] to-cyan-300/[0.04] p-6 md:p-8">
           <h2 className="text-3xl font-semibold tracking-tight text-white">
@@ -73,25 +68,5 @@ function RoleList({ items, title }: { items: string[]; title: string }) {
         ))}
       </ul>
     </div>
-  );
-}
-
-function ApplicationSection({ positionAppliedFor }: { positionAppliedFor: string }) {
-  return (
-    <section className="mx-auto grid max-w-7xl gap-8 px-5 pb-16 pt-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
-      <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#170b2d] to-[#080719] p-6 md:p-8">
-        <p className="text-sm font-bold uppercase tracking-[0.24em] text-fuchsia-200">
-          Application
-        </p>
-        <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white">
-          Apply for this role.
-        </h2>
-        <p className="mt-5 text-sm leading-7 text-slate-300">
-          Your application will be submitted specifically for the{" "}
-          {positionAppliedFor} role and sent to CybHrSec for review.
-        </p>
-      </div>
-      <CareersApplicationForm positionAppliedFor={positionAppliedFor} />
-    </section>
   );
 }
