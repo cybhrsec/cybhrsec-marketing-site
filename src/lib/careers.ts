@@ -62,6 +62,7 @@ export const careerRoles: CareerRole[] = [
     qualifications: [
       "Current student, recent graduate, or career changer",
       "Interest in cybersecurity, governance, compliance, privacy, risk management, or information security",
+      "Basic understanding of information security or cybersecurity concepts",
       "Strong written and verbal communication skills",
       "Eagerness to learn and contribute",
       "Experience is not required.",

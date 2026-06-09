@@ -63,14 +63,18 @@ function JobDetail({
               <p className="mt-3 text-sm leading-7 text-slate-300">
                 Preferred certifications may include:
               </p>
-              <ul className="mt-4 grid gap-2">
+              <p className="mt-4 flex flex-wrap gap-x-2 gap-y-1 text-sm leading-7 text-slate-300">
                 {role.certifications.map((certification) => (
-                  <li key={certification} className="flex gap-3 text-sm leading-6 text-slate-300">
-                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-cyan-200" />
+                  <span key={certification} className="inline-flex items-center gap-x-2">
                     <span>{certification}</span>
-                  </li>
+                    {certification !== role.certifications.at(-1) ? (
+                      <span aria-hidden="true" className="text-cyan-200/70">
+                        |
+                      </span>
+                    ) : null}
+                  </span>
                 ))}
-              </ul>
+              </p>
             </div>
           ) : null}
         </div>
