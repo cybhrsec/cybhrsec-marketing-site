@@ -6,8 +6,8 @@ export default function CareersAdminPage() {
     <>
       <PageHero
         eyebrow="Admin Only"
-        title="Careers & Talent Network Dashboard"
-        description="Review candidate profiles, filter submissions, update application status, and manage private notes for the CybHrSec talent network."
+        title="Careers Application Dashboard"
+        description="Review candidate profiles, filter submissions, update application status, and manage private notes for active CybHrSec roles."
       />
       <CareersAdminDashboard />
     </>

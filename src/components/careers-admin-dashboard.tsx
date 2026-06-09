@@ -17,7 +17,7 @@ type Applicant = {
 };
 
 const statuses = ["New", "Under Review", "Interview", "Talent Pool", "Rejected", "Hired"];
-const positions = ["All Positions", "Virtual GRC Consultant", "Cybersecurity & GRC Intern", "General Interest"];
+const positions = ["All Positions", "Virtual GRC Consultant", "Cybersecurity & GRC Intern"];
 
 const applicants: Applicant[] = [];
 

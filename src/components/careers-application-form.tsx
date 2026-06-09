@@ -3,12 +3,6 @@
 import type { FormEvent } from "react";
 import { useState } from "react";
 
-const positions = [
-  "Virtual GRC Consultant",
-  "Cybersecurity & GRC Intern",
-  "General Interest",
-];
-
 const interestAreas = [
   "Governance, Risk & Compliance (GRC)",
   "ISO 27001",
@@ -24,7 +18,11 @@ const interestAreas = [
 
 const acceptedFileTypes = ".pdf,.doc,.docx";
 
-export function CareersApplicationForm() {
+export function CareersApplicationForm({
+  positionAppliedFor,
+}: {
+  positionAppliedFor: string;
+}) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -35,15 +33,14 @@ export function CareersApplicationForm() {
     const formData = new FormData(form);
     const firstName = String(formData.get("firstName") ?? "").trim();
     const lastName = String(formData.get("lastName") ?? "").trim();
-    const position = String(formData.get("position") ?? "General Interest");
     const email = String(formData.get("email") ?? "").trim();
     const linkedIn = String(formData.get("linkedInProfile") ?? "").trim();
 
-    formData.append("_subject", "Application Received – CybHrSec");
+    formData.append("_subject", "Application Received - CybHrSec");
     formData.append("_captcha", "false");
     formData.append("_template", "table");
     formData.append("Applicant Name", `${firstName} ${lastName}`.trim());
-    formData.append("Position Selected", position);
+    formData.append("Position Applied For", positionAppliedFor);
     formData.append("Email Address", email);
     formData.append("LinkedIn URL", linkedIn);
     formData.append("Submission Timestamp", new Date().toISOString());
@@ -52,7 +49,7 @@ export function CareersApplicationForm() {
       [
         "Thank you for your interest in CybHrSec.",
         "",
-        "We have successfully received your application and appreciate your interest in joining our team and talent network.",
+        `We have successfully received your application for the ${positionAppliedFor} role and appreciate your interest in joining our team.`,
         "",
         "Our team will review your information and contact you if your background aligns with current or future opportunities.",
         "",
@@ -82,7 +79,7 @@ export function CareersApplicationForm() {
 
   return (
     <form
-      id="talent-network"
+      id="application-form"
       onSubmit={handleSubmit}
       className="grid gap-6 rounded-[2rem] border border-white/10 bg-white/[0.06] p-6 md:p-8"
     >
@@ -99,20 +96,13 @@ export function CareersApplicationForm() {
         </div>
       </FormSection>
 
-      <FormSection title="Position Information">
-        <label className="grid gap-2 text-sm font-medium text-slate-200">
-          Position
-          <select
-            name="position"
-            required
-            className="rounded-2xl border border-white/10 bg-[#070719] px-4 py-3 text-white outline-none transition focus:border-cyan-200"
-          >
-            {positions.map((position) => (
-              <option key={position}>{position}</option>
-            ))}
-          </select>
-        </label>
-      </FormSection>
+      <input name="positionAppliedFor" type="hidden" value={positionAppliedFor} />
+      <div className="rounded-2xl border border-cyan-200/20 bg-cyan-300/10 p-4">
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-cyan-100">
+          Position Applied For
+        </p>
+        <p className="mt-2 text-sm font-semibold text-white">{positionAppliedFor}</p>
+      </div>
 
       <FormSection title="Professional Information">
         <div className="grid gap-4 sm:grid-cols-2">
@@ -169,7 +159,7 @@ export function CareersApplicationForm() {
         />
         <span>
           I consent to CybHrSec storing and reviewing my application information
-          for recruitment and talent network purposes.
+          for recruitment purposes.
         </span>
       </label>
 
@@ -191,7 +181,7 @@ export function CareersApplicationForm() {
       {status === "sent" ? (
         <p className="rounded-2xl border border-emerald-300/20 bg-emerald-300/10 px-4 py-3 text-sm font-medium text-emerald-100">
           Your application has been submitted. CybHrSec will review your
-          information and contact you if there is a current or future fit.
+          information and contact you if your background aligns with this role.
         </p>
       ) : null}
       {status === "error" ? (
