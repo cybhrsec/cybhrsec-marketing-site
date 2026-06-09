@@ -10,19 +10,19 @@ export const services = [
   {
     title: "Cyber Risk Assessments",
     description:
-      "Identify practical security gaps, business risk, and the next steps that matter most.",
+      "Identify practical security gaps, business risk, human-risk patterns, and the next steps that matter most.",
     accent: "from-cyan-300 to-teal-300",
   },
   {
     title: "ISO 27001 Readiness",
     description:
-      "Prepare your management system, risk process, controls, policies, and evidence for certification.",
+      "Prepare your management system, risk process, controls, ownership, policies, and evidence for certification.",
     accent: "from-teal-300 to-emerald-300",
   },
   {
     title: "SOC 1 and SOC 2 Readiness",
     description:
-      "Translate trust service criteria and control expectations into an audit-ready plan.",
+      "Translate trust service criteria, ownership, and control expectations into an audit-ready plan.",
     accent: "from-pink-300 to-fuchsia-300",
   },
   {
@@ -34,7 +34,7 @@ export const services = [
   {
     title: "GRC Program Support",
     description:
-      "Create a sustainable operating rhythm for risks, controls, remediation, and reporting.",
+      "Create a sustainable operating rhythm for risks, controls, remediation, and reporting aligned to frameworks such as NIST CSF and ISO 27001.",
     accent: "from-violet-300 to-cyan-300",
   },
   {
@@ -46,13 +46,13 @@ export const services = [
   {
     title: "Compliance Reporting",
     description:
-      "Turn security work into executive-ready progress views, evidence, and next-step summaries.",
+      "Turn security work into executive-ready views of risk, ownership, evidence, and next-step priorities.",
     accent: "from-cyan-300 to-blue-300",
   },
   {
-    title: "CybHrSec Pro GRC Tool",
+    title: "CybHrSec Pro GRC Platform",
     description:
-      "Use CybHrSec Pro, our GRC tool, for risk tracking, policies, remediation, and reporting.",
+      "Use CybHrSec Pro, our GRC platform, for risk tracking, policies, remediation, ownership, and reporting.",
     accent: "from-fuchsia-300 to-orange-300",
   },
 ];

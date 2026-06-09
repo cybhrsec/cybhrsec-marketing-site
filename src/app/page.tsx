@@ -7,12 +7,12 @@ const servicesOverview = [
   {
     title: "Business Services",
     description:
-      "Manage cybersecurity risk, compliance, and governance with practical support tailored to small and growing businesses.",
+      "Cybersecurity GRC consulting that reduces compliance risk by improving control ownership, accountability, and day-to-day adoption.",
     offerings: [
       "Virtual GRC Support",
       "Compliance Readiness",
       "Risk Assessments",
-      "CybHrSec Pro GRC Tool",
+      "CybHrSec Pro GRC Platform",
     ],
     cta: "Learn More",
     href: "/services/business",
@@ -32,7 +32,7 @@ const servicesOverview = [
   {
     title: "Training & Workshops",
     description:
-      "Build digital confidence through cybersecurity awareness training, digital safety education, one-to-one guidance, and practical workshops.",
+      "Build digital confidence through awareness training, digital safety education, and practical workshops that address human-risk patterns.",
     offerings: [
       "Cybersecurity Awareness Training",
       "Digital Safety Education",
@@ -48,27 +48,27 @@ const approachSteps = [
   {
     title: "Understand",
     description:
-      "Translate cyber and compliance risk into plain business language.",
+      "Clarify how people, workflows, systems, and business pressure shape cybersecurity and compliance risk.",
   },
   {
     title: "Assess",
     description:
-      "Identify risks, gaps, and priorities across people, process, technology, and third parties.",
+      "Evaluate cybersecurity, compliance, and human-driven risk across controls, processes, and ownership.",
   },
   {
     title: "Simplify",
     description:
-      "Turn complex requirements into practical actions, policies, and controls.",
+      "Turn policies, controls, and framework requirements into practical actions teams can follow.",
   },
   {
     title: "Embed",
     description:
-      "Help businesses and individuals adopt secure practices that can be sustained.",
+      "Build governance, security expectations, and accountability into everyday operations.",
   },
   {
     title: "Improve",
     description:
-      "Use reporting and lessons learned to keep the program relevant as risks change.",
+      "Monitor adoption, control effectiveness, remediation, and recurring human-risk patterns.",
   },
 ];
 
@@ -101,7 +101,7 @@ const complexityCards = [
   ],
   [
     "Compliance can feel disconnected",
-    "Policies and frameworks often fail when they are not translated into everyday action and ownership.",
+    "Controls often fail when policies, people, processes, and day-to-day behavior are not connected.",
   ],
   [
     "Security fatigue slows progress",
@@ -169,6 +169,9 @@ function HeroSection() {
             </h1>
             <p className="mx-auto mt-6 max-w-none whitespace-nowrap text-[clamp(0.72rem,1.55vw,1.125rem)] leading-7 text-slate-300">
               Protecting people. Strengthening businesses. Making cybersecurity practical.
+            </p>
+            <p className="mx-auto mt-5 max-w-3xl text-sm font-semibold uppercase tracking-[0.2em] text-cyan-100/90">
+              Cybersecurity GRC consultancy + GRC platform addressing the human risk layer
             </p>
           </div>
         </div>
@@ -342,10 +345,10 @@ function ComplexitySection() {
             data-scroll-reveal
             style={{ transitionDelay: "120ms" }}
           >
-            Cybersecurity and compliance challenges affect everyone, from small
-            teams and leaders to creators, professionals, and individuals. The
-            harder part is often translating risk into clear behavior, practical
-            decisions, and routines people can sustain.
+            CybHrSec helps organizations reduce cybersecurity and compliance
+            risk by addressing the human risk layer: the behaviors, processes,
+            ownership gaps, and decision-making patterns that influence whether
+            controls actually work.
           </p>
         </div>
         <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -367,8 +370,9 @@ function ComplexitySection() {
           data-scroll-reveal
           style={{ transitionDelay: "260ms" }}
         >
-          CybHrSec helps turn cybersecurity and compliance complexity into
-          practical actions people can understand, adopt, and sustain.
+          The HCC-GRC framework helps translate recognized frameworks such as
+          NIST CSF and ISO 27001 into practical actions people can understand,
+          adopt, and sustain.
         </p>
       </div>
     </section>
@@ -399,7 +403,8 @@ function ServicesOverviewSection() {
             style={{ transitionDelay: "120ms" }}
           >
             Choose the right support for your organization, your public-facing
-            role, or the people who need practical cybersecurity education.
+            role, or the people who need practical cybersecurity education that
+            improves adoption, ownership, and accountability.
           </p>
         </div>
         <div className="mt-9 grid gap-5 lg:grid-cols-3">
@@ -463,7 +468,8 @@ function ClientPortalSection() {
             data-scroll-reveal
             style={{ transitionDelay: "120ms" }}
           >
-            CybHrSec Pro is a GRC tool for risks, policies, remediation, and reporting.
+            CybHrSec Pro is a GRC platform for risks, policies, remediation,
+            human-risk visibility, and reporting.
           </p>
           <p
             className="scroll-copy mt-5 text-base leading-8 text-slate-400"
@@ -471,9 +477,11 @@ function ClientPortalSection() {
             style={{ transitionDelay: "190ms" }}
           >
             Clients can use CybHrSec Pro to manage risk registers, policies,
-            remediation actions, compliance readiness, and executive reporting.
-            The tool can be used as a self-service subscription or paired with a
-            Virtual GRC Consultant for guided support.
+            remediation actions, compliance readiness, risk ownership, policy
+            adoption, and executive reporting.
+            The tool supports practical alignment with NIST CSF, ISO 27001, SOC
+            2, and HIPAA, and can be used as a self-service subscription or
+            paired with a Virtual GRC Consultant for guided support.
           </p>
           <div
             className="scroll-copy mt-8 flex flex-col gap-3 sm:flex-row"
@@ -567,7 +575,7 @@ function GrcDashboardMockup() {
               </div>
             </div>
             <p className="mt-5 text-sm leading-6 text-slate-300">
-              Policies, actions, risks, and readiness are organized into a simple executive view.
+              Policies, actions, risks, ownership, and readiness are organized into a simple executive view.
             </p>
           </div>
         </div>
@@ -600,8 +608,9 @@ function ApproachSection() {
           data-scroll-reveal
           style={{ transitionDelay: "120ms" }}
         >
-          The work is designed around people, decisions, and sustainable habits,
-          not fear or unnecessary technical noise.
+          The work is designed to reduce the human risk layer behind failed
+          controls: unclear ownership, weak adoption, inconsistent routines, and
+          decisions that do not reach daily work.
         </p>
       </div>
       <div className="relative mt-10 grid gap-5 lg:grid-cols-5">

@@ -34,7 +34,7 @@ export const careerRoles: CareerRole[] = [
     ],
     qualifications: [
       "Experience in cybersecurity, governance, risk management, audit, compliance, privacy, or information security",
-      "Familiarity with frameworks such as ISO 27001, NIST CSF, SOC 2, HIPAA, PCI DSS, or similar standards",
+      "Familiarity with frameworks such as NIST Cybersecurity Framework (CSF), ISO 27001, SOC 2, HIPAA, PCI DSS, or similar standards",
       "Strong communication and stakeholder engagement skills",
       "Ability to translate technical concepts into business language",
     ],

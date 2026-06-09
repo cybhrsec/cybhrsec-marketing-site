@@ -3,23 +3,23 @@ import { PageHero } from "@/components/sections";
 const serviceAreas = [
   [
     "Virtual GRC Support",
-    "Ongoing governance, risk, and compliance support without the cost of a full-time team.",
+    "Ongoing governance, risk, and compliance support that improves ownership, adoption, and control effectiveness across practical frameworks.",
   ],
   [
     "Compliance Readiness",
-    "Support for organizations preparing for cybersecurity and compliance frameworks such as ISO 27001, SOC 2, NIST CSF, and HIPAA.",
+    "Support for NIST CSF, ISO 27001, SOC 2, HIPAA, and readiness work that turns requirements into evidence, routines, and accountability.",
   ],
   [
     "Risk Assessments",
-    "Structured assessments designed to identify, prioritize, and manage cybersecurity and compliance risks.",
+    "Structured assessments that identify cybersecurity, compliance, and human-driven risk across controls, workflows, suppliers, and decisions.",
   ],
 ];
 
 const platformFeatures = [
-  ["Risk Register", "Track risks, owners, impact, likelihood, status, and treatment activities."],
-  ["Policy Library", "Store, manage, and access cybersecurity and compliance policies."],
-  ["Remediation Tracking", "Monitor findings, assign ownership, track progress, and demonstrate resolution efforts."],
-  ["Executive Reporting", "Give leadership visibility into risk posture, readiness, remediation status, and key metrics."],
+  ["Risk Register", "Track risks, owners, impact, likelihood, status, treatment activities, and human-risk indicators."],
+  ["Policy Library", "Store policies and make ownership, review status, and adoption easier to manage."],
+  ["Remediation Tracking", "Monitor findings, assign accountability, track progress, and demonstrate resolution efforts."],
+  ["Executive Reporting", "Give leadership visibility into risk posture, readiness, ownership, remediation status, and key metrics."],
 ];
 
 const supportOptions = [
@@ -60,7 +60,7 @@ export default function BusinessServicesPage() {
       <PageHero
         eyebrow="Business Services"
         title="Human-Centered Cybersecurity & Compliance for Small and Growing Businesses"
-        description="CybHrSec helps organizations manage cybersecurity risk, compliance readiness, policies, remediation, and executive reporting through practical consulting and CybHrSec Pro, our GRC tool."
+        description="CybHrSec is a cybersecurity GRC consultancy and GRC platform provider helping organizations reduce cybersecurity and compliance risk by addressing the human risk layer: ownership, adoption, accountability, and the decisions that make controls work."
       />
       <section className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
         <div className="grid gap-5 lg:grid-cols-3">
@@ -85,12 +85,14 @@ export default function BusinessServicesPage() {
             Business platform
           </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            CybHrSec Pro GRC Tool
+            CybHrSec Pro GRC Platform
           </h2>
           <p className="mt-5 text-base leading-8 text-slate-300">
-            CybHrSec Pro is our GRC tool designed to help small and growing
-            businesses manage cybersecurity risk, compliance readiness, policies,
-            remediation, and executive reporting in one place.
+            CybHrSec Pro is our GRC platform designed to help small and growing
+            businesses manage cybersecurity risk, compliance readiness,
+            policies, remediation, human-risk visibility, and executive
+            reporting in one place while supporting alignment with NIST CSF, ISO
+            27001, SOC 2, and HIPAA.
           </p>
           <div className="mt-7 grid gap-4 sm:grid-cols-2">
             {platformFeatures.map(([title, copy]) => (

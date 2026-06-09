@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.cybhrsec.com"),
-  title: "CybHrSec | Cybersecurity, Compliance, and GRC Consulting",
+  title: "CybHrSec | Cybersecurity GRC Consultancy and Platform",
   description:
-    "CybHrSec helps small and growing businesses manage cybersecurity risk, compliance readiness, policies, remediation, executive reporting, and GRC workflows.",
+    "Cybersecurity GRC support for individuals, creators, and small to growing businesses, helping reduce risk, improve compliance readiness, and address the human risk layer.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "CybHrSec | Cybersecurity, Compliance, and GRC Consulting",
+    title: "CybHrSec | Cybersecurity GRC Consultancy and Platform",
     description:
-      "Practical cybersecurity, compliance, privacy, and GRC support for businesses and individuals.",
+      "Practical cybersecurity GRC support for businesses and individuals, with CybHrSec Pro as the GRC platform for risk, policy, remediation, and reporting.",
     url: "https://www.cybhrsec.com",
     siteName: "CybHrSec",
     images: [

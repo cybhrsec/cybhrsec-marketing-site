@@ -5,27 +5,27 @@ const framework = [
   [
     "01",
     "Understand",
-    "Security often fails when controls are designed without understanding how people actually work. This step clarifies the people, systems, risks, goals, and pressures shaping the environment.",
+    "When controls are designed away from real work, risk gets missed. This step identifies how people, processes, systems, and business pressures shape risk.",
   ],
   [
     "02",
     "Assess",
-    "Risk is often missed when policies, accounts, suppliers, and evidence are reviewed in isolation. This step connects control gaps to real business, compliance, and human risk.",
+    "Gaps grow when controls and workflows are reviewed in isolation. This step evaluates cybersecurity, compliance, and human-driven risk together.",
   ],
   [
     "03",
     "Simplify",
-    "Findings can fail when they are too technical or unclear. This step turns risk into practical priorities, plain-English decisions, and clear ownership.",
+    "Requirements fail when they are too technical or unclear. This step turns policies, controls, and compliance expectations into actions teams can follow.",
   ],
   [
     "04",
     "Embed",
-    "Security often breaks down after implementation when routines are not built into daily work. This step helps teams make security and compliance part of normal operations.",
+    "Security breaks down when expectations sit outside daily work. This step integrates governance, security expectations, and accountability into operations.",
   ],
   [
     "05",
     "Improve",
-    "Risk changes as people, systems, suppliers, and regulations change. This step uses reporting, lessons learned, and ongoing review to keep programs relevant over time.",
+    "Risk returns when adoption and remediation are not monitored. This step tracks control effectiveness, ownership, and recurring human-risk patterns.",
   ],
 ];
 
@@ -104,6 +104,12 @@ export default function AboutPage() {
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
             A practical method for making security stick.
           </h2>
+          <p className="mt-4 text-base leading-8 text-slate-300">
+            The HCC-GRC framework translates recognized frameworks such as NIST
+            CSF and ISO 27001 into practical actions people can understand,
+            adopt, and sustain, with specific attention to the human risk layer
+            behind compliance and security failures.
+          </p>
         </div>
         <div className="grid gap-4 md:grid-cols-5">
           {framework.map(([number, title, copy]) => (

@@ -4,9 +4,9 @@ export default function GrcToolPage() {
   return (
     <>
       <PageHero
-        eyebrow="CybHrSec Pro GRC Tool"
-        title="CybHrSec Pro helps organize cybersecurity and compliance work."
-        description="CybHrSec Pro is a GRC tool designed to help organizations manage cybersecurity risk, compliance readiness, policies, remediation, evidence, vendor work, and executive reporting."
+        eyebrow="CybHrSec Pro GRC Platform"
+        title="CybHrSec Pro helps make cybersecurity and compliance work visible."
+        description="CybHrSec Pro is a GRC platform for risk registers, policy libraries, remediation tracking, control visibility, executive reporting, and human-risk visibility, supporting alignment with frameworks such as NIST CSF, ISO 27001, SOC 2, and HIPAA."
         primaryHref="/client-portal"
         primaryLabel="Access Client Portal"
         secondaryHref="/services/business"
@@ -14,7 +14,12 @@ export default function GrcToolPage() {
       />
       <GrcToolPreview />
       <section className="mx-auto grid max-w-7xl gap-5 px-5 py-16 md:grid-cols-4 lg:px-8">
-        {["Risk register", "Policy library", "Remediation tracker", "Executive reports"].map(
+        {[
+          "Risk ownership",
+          "Policy adoption",
+          "Remediation accountability",
+          "Executive reports",
+        ].map(
           (feature) => (
             <div
               key={feature}

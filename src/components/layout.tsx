@@ -252,10 +252,9 @@ export function Footer() {
         <div>
           <Brand />
           <p className="mt-5 max-w-md text-sm leading-6 text-slate-300">
-            CybHrSec helps individuals, small and growing businesses manage
-            cybersecurity risk, compliance readiness, policies, remediation, and
-            executive reporting through practical consulting and a modern client
-            portal.
+            Cybersecurity GRC support for individuals, creators, and small to
+            growing businesses, helping reduce risk, improve compliance
+            readiness, and address the human risk layer.
           </p>
           <div className="mt-6 flex items-center gap-3">
             {socialLinks.map(({ label, href, icon: Icon }) => (
@@ -292,7 +291,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-slate-500">
-        © 2026 CybHrSec. Cybersecurity, compliance, and GRC support for growing businesses.
+        © 2026 CybHrSec. Cybersecurity GRC consultancy and GRC platform.
       </div>
     </footer>
   );

@@ -14,7 +14,7 @@ export const featuredResources = [
   {
     title: "Governance Templates",
     description:
-      "Future-ready structures for risk registers, policy ownership, remediation tracking, and executive updates.",
+      "Future-ready structures for risk registers, policy ownership, remediation tracking, human-risk visibility, and executive updates.",
     type: "Templates",
   },
   {

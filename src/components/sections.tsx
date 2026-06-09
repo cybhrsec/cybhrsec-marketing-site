@@ -148,8 +148,8 @@ export function ReadinessPanel() {
           </h2>
           <p className="mt-5 text-base leading-8 text-slate-300">
             CybHrSec helps you understand what is required, what already works,
-            what needs remediation, and how to show progress to leadership
-            without drowning your team in compliance noise.
+            who owns the next step, and how to show remediation progress to
+            leadership without drowning your team in compliance noise.
           </p>
         </div>
         <div className="grid gap-4">
@@ -180,12 +180,14 @@ export function GrcToolPreview() {
           Client portal
         </p>
         <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          CybHrSec Pro is a GRC workspace for risks, policies, remediation, and reporting.
+          CybHrSec Pro is a GRC platform for risks, policies, remediation, human-risk visibility, and reporting.
         </h2>
         <p className="mt-5 text-base leading-8 text-slate-300">
-          CybHrSec Pro, our GRC tool, gives clients one place to see assessment
-          findings, track remediation, manage policies, organize evidence, and
-          prepare clear updates for executives or auditors.
+          CybHrSec Pro gives clients one place to see assessment findings,
+          track remediation, manage policies, organize evidence, monitor
+          ownership, and prepare clear updates for executives or auditors. It
+          supports practical alignment with NIST CSF, ISO 27001, SOC 2, and
+          HIPAA.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <ButtonLink href="/grc-tool">Explore CybHrSec Pro</ButtonLink>

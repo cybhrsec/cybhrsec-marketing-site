@@ -8,7 +8,7 @@ const servicePaths = [
     href: "/services/business",
     image: "/images/advisory-visual.svg",
     description:
-      "Cybersecurity consulting, GRC advisory, compliance readiness, risk assessments, and CybHrSec Pro GRC Tool support.",
+      "Cybersecurity GRC consulting, compliance readiness, risk assessments, and CybHrSec Pro GRC platform support.",
     items: ["Virtual GRC", "Compliance readiness", "Risk assessments", "CybHrSec Pro"],
   },
   {
@@ -35,9 +35,19 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Choose the support that fits your situation."
-        description="CybHrSec supports organizations, public-facing professionals, creators, teams, and individuals with practical cybersecurity, compliance, and digital safety services."
+        description="CybHrSec supports organizations, public-facing professionals, creators, teams, and individuals with practical cybersecurity, compliance, GRC, and digital safety services."
       />
       <section className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
+        <div className="mb-8 max-w-4xl rounded-[1.75rem] border border-white/10 bg-white/[0.055] p-6">
+          <p className="text-sm font-bold uppercase tracking-[0.24em] text-cyan-200">
+            Human-centered GRC
+          </p>
+          <p className="mt-4 text-base leading-8 text-slate-300">
+            Our services go beyond documentation and checklists. We help
+            organizations build cybersecurity and compliance programs that
+            people understand, adopt, and sustain.
+          </p>
+        </div>
         <div className="grid gap-6 lg:grid-cols-3">
           {servicePaths.map((path) => (
             <article
